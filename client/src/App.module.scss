@@ -7,18 +7,29 @@
 .logoLine{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    size: var(--font-xl);
-    img{
-        width: var(--font-xl);
-        height: var(--font-xl);
-        margin-right: 10px;
-    }
+    align-items: center;    
+    color: var(--dark-text);
+    font-size: var(--font-xl); 
+    // img{
+    //     width: var(--font-xl);
+    //     height: var(--font-xl);
+    //     margin-right: 10px;
+    // }
 }
 
 .navMenu{
     display: flex;
     flex-direction: row;    
     align-items: center;
-    gap: 1rem;    
+    gap: 1rem;       
 }
+
+.icon{
+        width: var(--font-lg);
+        height: var(--font-lg);
+        margin-right: var(--font-xs);
+        background-color: var(--primary-blue);
+        border-radius: 50%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }

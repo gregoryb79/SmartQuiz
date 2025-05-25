@@ -3,6 +3,7 @@ import styles from "./App.module.scss";
 import { Outlet, useNavigate} from "react-router";
 // import { useState } from "react";
 import appIcon from "./assets/favicon.png";
+import { NavButton } from "./pages/components/NavButton";
 
 export function App() {  
 
@@ -17,23 +18,26 @@ export function App() {
 
 function Nav() {
   const navigate = useNavigate();
+  // const {doLogOut} = useDoLogOut(() => navigate("./login"));
 
   return (
     <nav className={styles.nav}>
       <section className={styles.logoLine}>
-        <img src={appIcon} alt="smart quizz icon" />
-        <h3>SmartQuiz</h3>
+        {/* <img src={appIcon} alt="smart quizz icon" /> */}
+        <div className={styles.icon}></div>
+        <p>SmartQuiz</p>
       </section>
       
       <menu className={styles.navMenu}>
         <li>
-          <button onClick={() => navigate("/")}>Home</button>
+          <NavButton label="Home" onClick={() => navigate("/")}/>          
         </li>
         <li>
-          <button onClick={() => navigate("/login")}>History</button>
+          <NavButton label="History" onClick={() => navigate("/history")} />                    
         </li>
         <li>
-          <button onClick={() => navigate("/register")}>Logout</button>
+          <NavButton label="LogOut"/>
+          {/* <NavButton label="LogOut" onClick={doLogOut}/>                               */}
         </li>
       </menu>
     </nav>
