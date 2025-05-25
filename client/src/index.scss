@@ -38,7 +38,22 @@
 * {
     margin: 0;
 }
+li{
+    list-style: none;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    color: var(--dark-text);
+    background-color: var(--light-gray-bg);
+}
 
 #root {
     height: 100%;
+    max-width: 37rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
 }

@@ -1,0 +1,24 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logoLine{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    size: var(--font-xl);
+    img{
+        width: var(--font-xl);
+        height: var(--font-xl);
+        margin-right: 10px;
+    }
+}
+
+.navMenu{
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    gap: 1rem;    
+}
