@@ -5,7 +5,7 @@ import { createBrowserRouter, redirect } from "react-router";
 import { App } from "./App";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
-import { NewQuiz } from "./pages/NewQuiz";
+import { Quiz } from "./pages/Quiz";
 // import { HandleOrder } from "./pages/HandleOrder";
 // import { LogIn } from "./pages/LogIn";
 // import { Register } from "./pages/Register";
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
             // { index: true, loader: () => redirect("/orders-history") },
             { path: "*", Component: NotFound },   
             { path: "/", Component: Home },         
-            { path: "/new-quiz", Component: NewQuiz },
+            { path: "/new-quiz", Component: Quiz },
             // {
             //     path: "/login",
             //     Component: LogIn,

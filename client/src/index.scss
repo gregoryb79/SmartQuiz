@@ -5,6 +5,8 @@
     --dark-text:        #111827;   // Main text (headings, questions)
     --light-text:       #6B7280;   // Secondary text (labels, meta info)
     --green-success:    #10B981;   // Feedback: Correct answer
+    --red-error:        #EF4444;   // Feedback: Incorrect answer
+    --yellow-warning:   #F59E0B;   // Feedback: Warning or info messages
 
     --white:            #FFFFFF;   // Base color for cards and inputs
     --input-bg:         #F3F4F6;   // Input fields background
@@ -15,6 +17,9 @@
     --font-md:  1rem;       // ~16px — Normal body text, form labels
     --font-sm:  0.875rem;   // ~14px — Subtext, meta info (score, difficulty)
     --font-xs:  0.75rem;    // ~12px — Optional notes, input hints
+
+    --standard-width: 90%; // Standard width for main content areas
+    --standard-height: 90%; // Standard height for main content areas
 
     @media (prefers-color-scheme: dark){
         // Backgrounds

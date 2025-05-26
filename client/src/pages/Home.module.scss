@@ -8,8 +8,9 @@
     padding: 2rem;
     background-color: var(--light-gray-bg);
 
-    width: 90%;
-    height: 90%;    
+    width: var(--standard-width);
+    height: var(--standard-height);
+    
     border: 2px solid var(--gray-border);
     border-radius: 0 0 8px 8px;
 }

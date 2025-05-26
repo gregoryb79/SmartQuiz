@@ -1,0 +1,17 @@
+.quizButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 48%;
+    border: 2px solid var(--gray-border);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--light-gray-bg);
+    color: var(--dark-text);
+    font-size: var(--font-md);
+    input{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}

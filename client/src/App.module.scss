@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 
-    width: 90%;
+    width: var(--standard-width);
     margin: 0 auto;
     border: 2px solid var(--gray-border);
     border-radius: 8px 8px 0 0;
@@ -28,10 +29,13 @@
 }
 
 .navMenu{
+    padding: 0;
     display: flex;
     flex-direction: row;    
     align-items: center;
-    gap: 1rem;           
+    justify-content: space-between;
+    // gap: 1rem;   
+    // border: 1px solid var(--gray-border);        
 }
 
 .icon{
