@@ -1,4 +1,7 @@
+@use '../styles/mixins' as *;
+
 .quizContainer{
+    position: relative;
     width: var(--standard-width);
     height: var(--standard-height);
     margin: 0 auto;
@@ -7,15 +10,15 @@
 
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-
-    // align-items: center;
-    // justify-content: space-around;
+    gap: 0;
+    > *:nth-child(n+3) {
+     margin-top: 2rem; 
+    }   
     
 }
 
 .quizHeader{
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -39,11 +42,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    // width: 100%;
-    // border: 1px solid var(--gray-border);
+    gap: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    //  border: 1px solid var(--gray-border);
     padding-top: 1rem;
     padding-bottom: 1rem;
+    @include shadowBorder;
 }
 
 .quizOptions{
@@ -51,8 +56,8 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
     
     // margin-left: auto;
     // margin-right: auto;
@@ -66,4 +71,31 @@
 }
 .timerValue.none {
   color: var(--red-error);
+}
+
+.progressBarContainer {
+  width: 90%;
+  margin: 2rem auto 0 auto;
+  height: 10px;
+  background: var(--gray-border);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--primary-blue);
+  transition: width 0.3s;
+}
+
+.quizFooter{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: var(--font-lg);
 }

@@ -18,7 +18,7 @@
     --font-sm:  0.875rem;   // ~14px — Subtext, meta info (score, difficulty)
     --font-xs:  0.75rem;    // ~12px — Optional notes, input hints
 
-    --standard-width: 90%; // Standard width for main content areas
+    --standard-width: 85%; // Standard width for main content areas
     --standard-height: 90%; // Standard height for main content areas
 
     @media (prefers-color-scheme: dark){
@@ -32,6 +32,7 @@
         --light-text:  #9CA3AF;   // Labels, secondary info     
     }
 }
+
 
 *,
 *::before,

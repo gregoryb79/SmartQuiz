@@ -1,3 +1,5 @@
+@use '../styles/mixins' as *;
+
 .homeMain{
     margin: -2px auto 0 auto;
 
@@ -36,8 +38,7 @@
     padding-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    @include shadowBorder;
 
     select{
         font-size: var(--font-lg);
