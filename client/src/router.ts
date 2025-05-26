@@ -6,6 +6,7 @@ import { App } from "./App";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Quiz } from "./pages/Quiz";
+import { History } from "./pages/History";
 // import { HandleOrder } from "./pages/HandleOrder";
 // import { LogIn } from "./pages/LogIn";
 // import { Register } from "./pages/Register";
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
             { path: "*", Component: NotFound },   
             { path: "/", Component: Home },         
             { path: "/new-quiz", Component: Quiz },
+            { path: "/history", Component: History },
             // {
             //     path: "/login",
             //     Component: LogIn,
