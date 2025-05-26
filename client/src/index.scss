@@ -18,14 +18,13 @@
 
     @media (prefers-color-scheme: dark){
         // Backgrounds
-        $dark-bg:             #1F2937;   // Primary background (replaces light-gray)
-        $dark-surface:        #111827;   // Cards, input backgrounds
-        $dark-border:         #374151;   // Outlines, dividers
+        --light-gray-bg: #1F2937;   // Primary background (replaces light-gray)
+        --input-bg:      #111827;   // Cards, input backgrounds
+        --gray-border:   #374151;   // Outlines, dividers
 
         // Text
-        $dark-text-primary:   #F9FAFB;   // Headings, main text
-        $dark-text-secondary: #9CA3AF;   // Labels, secondary info
-        $dark-placeholder:    #6B7280;   // Input placeholder text        
+        --dark-text:   #F9FAFB;   // Headings, main text
+        --light-text:  #9CA3AF;   // Labels, secondary info     
     }
 }
 

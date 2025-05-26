@@ -9,8 +9,7 @@ export function App() {
 
   return (
      <>      
-      <Nav/>
-      <h1>Welcome to SmartQuiz</h1>
+      <Nav/>      
       <Outlet/>
     </>
   );
