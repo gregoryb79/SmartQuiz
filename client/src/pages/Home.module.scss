@@ -1,20 +1,22 @@
 @use '../styles/mixins' as *;
 
 .homeMain{
-    margin: -2px auto 0 auto;
+    // margin: -2px auto 0 auto;
+
+    @include pageFrame;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding: 2rem;
-    background-color: var(--light-gray-bg);
+    // background-color: var(--light-gray-bg);
 
-    width: var(--standard-width);
-    height: var(--standard-height);
+    // width: var(--standard-width);
+    // height: var(--standard-height);
     
-    border: 2px solid var(--gray-border);
-    border-radius: 0 0 8px 8px;
+    // border: 2px solid var(--gray-border);
+    // border-radius: 0 0 8px 8px;
 }
 
 .mainButtons{
@@ -52,5 +54,12 @@
         flex-direction: column;
         width: 100%;
         gap: 0.5rem;
-    }
+    }   
+}
+
+.appIcon{
+    width: 35%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin-top: 1rem;
 }

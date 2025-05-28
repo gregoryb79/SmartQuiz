@@ -1,13 +1,8 @@
 @use '../styles/mixins' as *;
 
 .quizContainer{
-    position: relative;
-    width: var(--standard-width);
-    height: var(--standard-height);
-    margin: 0 auto;
-    border: 2px solid var(--gray-border);
-    border-radius: 0 0 8px 8px;
-
+    @include pageFrame;
+    
     display: flex;
     flex-direction: column;
     gap: 0;

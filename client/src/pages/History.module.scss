@@ -1,16 +1,35 @@
 @use '../styles/mixins' as *;
 
 .historyContainer{
-    position: relative;
-    width: var(--standard-width);
-    height: var(--standard-height);
-    margin: 0 auto;
-    border: 2px solid var(--gray-border);
-    border-radius: 0 0 8px 8px;
-
+    @include pageFrame;   
+   
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
     
+}
+
+.historyList{
+    @include shadowBorder;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    
+    li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border-bottom: 1px solid var(--gray-border);
+
+        span {
+            flex: 1 1 0;
+            text-align: center;
+        }
+        
+        &:last-child{
+            border-bottom: none;
+        }
+    }
 }

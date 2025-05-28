@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { GeneralButton } from "./components/GeneralButton";
 import styles from "./Home.module.scss";
+import favicon from "../assets/favicon.png";
 
 export function Home() {
     const [username, setUsername] = React.useState<string | null>("Username");
@@ -37,6 +38,7 @@ export function Home() {
                 </select> 
             </section>          
         </form>
+        <img className={styles.appIcon} src={favicon} alt="application icon" />
    </main>
   );
 }
