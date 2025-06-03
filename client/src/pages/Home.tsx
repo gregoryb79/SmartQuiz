@@ -15,7 +15,7 @@ export function Home() {
         <h2>Welcome, {username} 👋🏻</h2>
         <section className={styles.mainButtons}>
             <GeneralButton label="Start New Quiz" onClick={() => navigate("/new-quiz", { state: { category, difficulty } })}/>
-            <GeneralButton label="View Quiz History" onClick={() => navigate("/quiz-history")}/>
+            <GeneralButton label="View Quiz History" onClick={() => navigate("/history")}/>
         </section>
         <form className={styles.quizForm}>
             <section>

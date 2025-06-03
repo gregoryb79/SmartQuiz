@@ -1,6 +1,7 @@
 import styles from "./QuizButton.module.scss";
 
 type QuizButtonProps = {
+  state: "default" | "correct" | "wrong";
   label: string;
   name: string;
   value: string;
@@ -8,9 +9,9 @@ type QuizButtonProps = {
   onChange: (value: string) => void;
 };
 
-export function QuizButton({ label, name, value, checked, onChange }: QuizButtonProps) {
+export function QuizButton({ state, label, name, value, checked, onChange }: QuizButtonProps) {
   return (
-    <label className={`${styles.quizButton} ${checked ? styles.selected : ""}`}>
+    <label className={`${styles.quizButton} ${checked ? styles.selected : ""} ${styles[state]}`}>
       <input 
         type="radio"
         name={name}

@@ -6,12 +6,27 @@
     width: 45%;
     border: 2px solid var(--gray-border);
     border-radius: 0.5rem;
-    padding: 0.25rem 0.5rem;
-    background: var(--light-gray-bg);
-    color: var(--dark-text);
+    padding: 0.25rem 0.5rem;    
     font-size: var(--font-md);
     input{
         height: 1.5rem;
         width: 1.5rem;
     }
+    cursor: pointer;
+}
+
+.default {   
+    background: var(--light-gray-bg);
+    color: var(--dark-text);
+    border-color: var(--gray-border);
+}
+.correct { 
+    background: var(--green-success);
+    color: var(--white-text);
+    border-color: var(--green-success);
+}
+.wrong {
+    background: var(--red-error);
+    color: var(--white-text);
+    border-color: var(--red-error);
 }

@@ -4,45 +4,86 @@ import { QuizButton } from "./components/QuizButton";
 import { GeneralButton } from "./components/GeneralButton";
 import { useEffect, useState } from "react";
 import { Confirm } from "./components/Confirm";
+import { useQestion } from "../hooks/useQuestion";
+
 
 export function Quiz() {   
 
     const navigate = useNavigate()
     const location = useLocation();
-    const { category, difficulty } = location.state || {};    
-    const question = "What is the capital of France?";
+    const { category, difficulty } = location.state || {};        
     const timerValue = 15; // is seconds
     const totalSteps = 10; // total number of steps in the quiz
+    const answerFeedbackTime = 1000; // time in milliseconds to show answer feedback
     const [selected, setSelected] = useState<string>("");
     const [timeLeft, setTimeLeft] = useState<number>(timerValue); // in seconds 
+    const [timerActive, setTimerActive] = useState(false);
     const [currentStep, setCurrentStep] = useState<number>(1);
-    const [correctAnswers, setCorrectAnswer] = useState<number>(3); 
+    const [correctAnswers, setCorrectAnswer] = useState<number>(0); 
+    const [streak, setStreak] = useState<number>(0); 
     const [showConfirm, setShowConfirm] = useState<boolean>(false);
+    const [buttonState, setButtonState] = useState<("default" | "correct" | "wrong")[]>(["default", "default", "default", "default"]);
+
+    const {question,error} = useQestion(category, difficulty, streak,currentStep);
+    
+    useEffect(() => {
+        if (question) {
+            setTimeLeft(timerValue);
+            setTimerActive(true);
+        }
+    }, [question]);
 
     useEffect(() => {
+        if (!timerActive) return;
         if (timeLeft <= 0) {            
             console.log("Time's up!");
             const data = new FormData();
             data.set("answer", selected);
             submitAnswer(data);
             setSelected("");
-            setTimeLeft(timerValue);
-            setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
+            setTimeLeft(timerValue);                    
             return;
         }
         const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
         return () => clearTimeout(timer);
-    }, [timeLeft]);
+    }, [timeLeft, timerActive]);   
 
     async function submitAnswer(formData: FormData) {
+        if (!question) {
+            console.error("No question available to submit answer.");
+            return;
+        }
         const answer = formData.get("answer");
-        console.log(`Submitted answer: ${answer}`);
+        const currButtonState = [...buttonState];
+        setTimerActive(false);
+        if (!answer || answer !== question.answers[question.correctAnswer]) {
+            console.log(`Wrong answer: ${answer}`);            
+            currButtonState[question.correctAnswer] = "wrong";
+            setButtonState(currButtonState);            
+            setStreak(0);
+            setTimeout(() => {
+                setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
+                setButtonState(["default", "default", "default", "default"]);
+            }, answerFeedbackTime); 
+            setSelected("");            
+            return;            
+        }       
+        currButtonState[question.correctAnswer] = "correct";
+        setButtonState(currButtonState);
+        const currStreak = streak + 1;
+        setStreak(currStreak);        
+        setTimeout(() => {
+                setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
+                setButtonState(["default", "default", "default", "default"]);
+            }, answerFeedbackTime);        
+        setCorrectAnswer(prevCount =>(prevCount + 1));
+        console.log(`Submitting answer: ${answer}, current streak: ${streak}`);         
     }   
 
     return (
         <main className={styles.quizContainer}>
             <div className={styles.progressBarContainer}>
-                <div className={styles.progressBar} style={{ width: `${(currentStep / totalSteps) * 100}%` }}/>
+                <div className={`${styles.progressBar} ` + (streak > 3 ? styles.hard : streak > 2 ? styles.medium : styles.normal)} style={{ width: `${(currentStep / totalSteps) * 100}%` }}/>
             </div>
             <section className={styles.quizHeader}>
                 <h2 className={styles.quizTitle}>{category} Quiz</h2>
@@ -54,14 +95,14 @@ export function Quiz() {
                 </div>
             </section>
                         
-            <p className={styles.quizQuestion}>{question}</p>
+            <p className={styles.quizQuestion}>{question?.question || "loading question..."}</p>
             
             <form className={styles.quizForm} action={submitAnswer}>
                 <section className={styles.quizOptions}>
-                    <QuizButton label="Paris" name="answer" value="Paris" checked={selected === "Paris"} onChange={setSelected}/>                   
-                    <QuizButton label="Rome" name="answer" value="Rome" checked={selected === "Rome"} onChange={setSelected}/>
-                    <QuizButton label="Lisbon" name="answer" value="Lisbon" checked={selected === "Lisbon"} onChange={setSelected}/>
-                    <QuizButton label="New York" name="answer" value="New York" checked={selected === "New York"} onChange={setSelected}/>                    
+                    <QuizButton state = {buttonState[0]} label={`${question?.answers[0] || "Loading..."}`} name="answer" value={`${question?.answers[0]}`} checked={selected === `${question?.answers[0]}`} onChange={setSelected}/>                   
+                    <QuizButton state = {buttonState[1]} label={`${question?.answers[1] || "Loading..."}`} name="answer" value={`${question?.answers[1]}`} checked={selected === `${question?.answers[1]}`} onChange={setSelected}/>
+                    <QuizButton state = {buttonState[2]} label={`${question?.answers[2] || "Loading..."}`} name="answer" value={`${question?.answers[2]}`} checked={selected === `${question?.answers[2]}`} onChange={setSelected}/>
+                    <QuizButton state = {buttonState[3]} label={`${question?.answers[3] || "Loading..."}`} name="answer" value={`${question?.answers[3]}`} checked={selected === `${question?.answers[3]}`} onChange={setSelected}/>
                 </section>
                 <GeneralButton label="Submit Answer"/>
             </form>  
@@ -84,3 +125,4 @@ export function Quiz() {
         </main>
     );
 }
+
