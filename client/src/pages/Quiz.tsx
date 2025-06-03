@@ -17,6 +17,7 @@ export function Quiz() {
     const answerFeedbackTime = 1000; // time in milliseconds to show answer feedback
     const [selected, setSelected] = useState<string>("");
     const [timeLeft, setTimeLeft] = useState<number>(timerValue); // in seconds 
+    const [totalTime, setTotalTime] = useState<number>(0); // in seconds
     const [timerActive, setTimerActive] = useState(false);
     const [currentStep, setCurrentStep] = useState<number>(1);
     const [correctAnswers, setCorrectAnswer] = useState<number>(0); 
@@ -24,7 +25,9 @@ export function Quiz() {
     const [showConfirm, setShowConfirm] = useState<boolean>(false);
     const [buttonState, setButtonState] = useState<("default" | "correct" | "wrong")[]>(["default", "default", "default", "default"]);
 
-    const {question,error} = useQestion(category, difficulty, streak,currentStep);
+    const {question,error} = useQestion(category, difficulty, streak, currentStep);
+
+    console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}, total time: ${totalTime}, streak: ${streak}`);
     
     useEffect(() => {
         if (question) {
@@ -44,7 +47,9 @@ export function Quiz() {
             setTimeLeft(timerValue);                    
             return;
         }
-        const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+        const timer = setTimeout(() => {setTimeLeft(timeLeft - 1); 
+                                        setTotalTime(prevTime => prevTime + 1);                       
+                                        }, 1000);
         return () => clearTimeout(timer);
     }, [timeLeft, timerActive]);   
 
