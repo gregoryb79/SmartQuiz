@@ -7,13 +7,23 @@ import { Confirm } from "./components/Confirm";
 import { useQestion } from "../hooks/useQuestion";
 
 
+const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY);
+const timerValueMedium = Number(import.meta.env.VITE_QUIZ_TIME_MEDIUM);
+const timerValueHard = Number(import.meta.env.VITE_QUIZ_TIME_HARD);
+
+const totalStepsEasy = Number(import.meta.env.VITE_QUIZ_STEPS_EASY);
+const totalStepsMedium = Number(import.meta.env.VITE_QUIZ_STEPS_MEDIUM);
+const totalStepsHard = Number(import.meta.env.VITE_QUIZ_STEPS_HARD);
+
+
 export function Quiz() {   
 
     const navigate = useNavigate()
     const location = useLocation();
     const { category, difficulty } = location.state || {};        
-    const timerValue = 15; // is seconds
-    const totalSteps = 10; // total number of steps in the quiz
+    const timerValue = difficulty === "Easy" ? timerValueEasy : difficulty === "Medium" ? timerValueMedium : timerValueHard; 
+    const totalSteps = difficulty === "Easy" ? totalStepsEasy : difficulty === "Medium" ? totalStepsMedium : totalStepsHard; 
+    
     const answerFeedbackTime = 1000; // time in milliseconds to show answer feedback
     const [selected, setSelected] = useState<string>("");
     const [timeLeft, setTimeLeft] = useState<number>(timerValue); // in seconds 
