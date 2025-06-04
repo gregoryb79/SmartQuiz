@@ -12,7 +12,7 @@ export async function getQuestion(category:string, difficulty:string, streak : n
     const res = await apiClient.get("/questions");   
     console.log(res.data);
 
-    apiClient.post("/questions", questions[Math.floor(Math.random() * questions.length)]);
+    // apiClient.post("/questions", questions[Math.floor(Math.random() * questions.length)]);
         
 
     return new Promise((resolve) => {
