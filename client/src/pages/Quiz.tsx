@@ -7,13 +7,13 @@ import { Confirm } from "./components/Confirm";
 import { useQestion } from "../hooks/useQuestion";
 
 
-const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY);
-const timerValueMedium = Number(import.meta.env.VITE_QUIZ_TIME_MEDIUM);
-const timerValueHard = Number(import.meta.env.VITE_QUIZ_TIME_HARD);
+const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY) || 15;
+const timerValueMedium = Number(import.meta.env.VITE_QUIZ_TIME_MEDIUM) || 10;
+const timerValueHard = Number(import.meta.env.VITE_QUIZ_TIME_HARD) || 10;
 
-const totalStepsEasy = Number(import.meta.env.VITE_QUIZ_STEPS_EASY);
-const totalStepsMedium = Number(import.meta.env.VITE_QUIZ_STEPS_MEDIUM);
-const totalStepsHard = Number(import.meta.env.VITE_QUIZ_STEPS_HARD);
+const totalStepsEasy = Number(import.meta.env.VITE_QUIZ_STEPS_EASY) || 10;
+const totalStepsMedium = Number(import.meta.env.VITE_QUIZ_STEPS_MEDIUM) || 15;;
+const totalStepsHard = Number(import.meta.env.VITE_QUIZ_STEPS_HARD) || 20;
 
 
 export function Quiz() {   
