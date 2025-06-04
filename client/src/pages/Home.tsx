@@ -19,7 +19,7 @@ export function Home() {
         </section>
         <form className={styles.quizForm}>
             <section>
-                <label htmlFor="Difficulty:">Difficulty:</label>
+                <label htmlFor="Difficulty:">Start Difficulty:</label>
                 <select id="difficulty" name="difficulty" onChange={(e) => setDifficulty(e.target.value)} value={difficulty}>   
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
