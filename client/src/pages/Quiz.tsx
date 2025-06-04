@@ -1,8 +1,8 @@
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate, useBlocker } from "react-router";
 import styles from "./Quiz.module.scss";
 import { QuizButton } from "./components/QuizButton";
 import { GeneralButton } from "./components/GeneralButton";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Confirm } from "./components/Confirm";
 import { useQestion } from "../hooks/useQuestion";
 
@@ -37,7 +37,7 @@ export function Quiz() {
 
     const {question,error} = useQestion(category, difficulty, streak, currentStep);
 
-    console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}, total time: ${totalTime}, streak: ${streak}`);
+    // console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}, total time: ${totalTime}, streak: ${streak}`);
     
     useEffect(() => {
         if (question) {
@@ -95,6 +95,18 @@ export function Quiz() {
         console.log(`Submitting answer: ${answer}, current streak: ${streak}`);         
     }   
 
+    let blockNavigation = true;
+    // console.log("Block navigation:", blockNavigation.current);
+    useBlocker((tx) => {
+        console.log("Entered useBlocker", tx);
+        if (blockNavigation){
+            console.log("Blocking navigation");
+            setShowConfirm(true);                    
+            return true;   
+        }
+        return false;              
+    });
+
     return (
         <main className={styles.quizContainer}>
             <div className={styles.progressBarContainer}>
@@ -132,6 +144,7 @@ export function Quiz() {
                 ? `Are you sure? Only ${totalSteps-currentStep} question to go!`
                 : `Are you sure?`} 
                 onYes = {() => {
+                            blockNavigation = false;
                             navigate("/");
                             setShowConfirm(false);}
                 }
