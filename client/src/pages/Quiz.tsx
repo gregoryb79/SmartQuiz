@@ -4,14 +4,14 @@ import { QuizButton } from "./components/QuizButton";
 import { GeneralButton } from "./components/GeneralButton";
 import { useEffect, useRef, useState } from "react";
 import { Confirm } from "./components/Confirm";
-import { useQestion } from "../hooks/useQuestion";
+import { useQuestion } from "../hooks/useQuestion";
 
 
 const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY) || 15;
 const timerValueMedium = Number(import.meta.env.VITE_QUIZ_TIME_MEDIUM) || 10;
 const timerValueHard = Number(import.meta.env.VITE_QUIZ_TIME_HARD) || 10;
 
-const totalStepsEasy = Number(import.meta.env.VITE_QUIZ_STEPS_EASY) || 10;
+const totalStepsEasy = 2;//Number(import.meta.env.VITE_QUIZ_STEPS_EASY) || 10;
 const totalStepsMedium = Number(import.meta.env.VITE_QUIZ_STEPS_MEDIUM) || 15;;
 const totalStepsHard = Number(import.meta.env.VITE_QUIZ_STEPS_HARD) || 20;
 
@@ -30,12 +30,13 @@ export function Quiz() {
     const [totalTime, setTotalTime] = useState<number>(0); // in seconds
     const [timerActive, setTimerActive] = useState(false);
     const [currentStep, setCurrentStep] = useState<number>(1);
+    // const [qCounter, setQCounter] = useState<number>(0); 
     const [correctAnswers, setCorrectAnswer] = useState<number>(0); 
     const [streak, setStreak] = useState<number>(0); 
     const [showConfirm, setShowConfirm] = useState<boolean>(false);
     const [buttonState, setButtonState] = useState<("default" | "correct" | "wrong")[]>(["default", "default", "default", "default"]);
 
-    const {question,error} = useQestion(category, difficulty, streak, currentStep);
+    const {question,error} = useQuestion(category, difficulty, streak, currentStep, totalSteps);
 
     // console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}, total time: ${totalTime}, streak: ${streak}`);
     
@@ -48,6 +49,7 @@ export function Quiz() {
 
     useEffect(() => {
         if (!timerActive) return;
+        // if (currentStep === totalSteps) return;
         if (timeLeft <= 0) {            
             console.log("Time's up!");
             const data = new FormData();
@@ -77,26 +79,26 @@ export function Quiz() {
             setButtonState(currButtonState);            
             setStreak(0);
             setTimeout(() => {
-                setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
+                setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps+1));
+                console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}`);
                 setButtonState(["default", "default", "default", "default"]);
             }, answerFeedbackTime); 
             setSelected("");            
             return;            
         }       
         currButtonState[question.correctAnswer] = "correct";
-        setButtonState(currButtonState);
-        const currStreak = streak + 1;
-        setStreak(currStreak);        
+        setButtonState(currButtonState);        
+        setStreak(currStreak => (currStreak + 1));        
         setTimeout(() => {
-                setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
+                setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps+1));
+                console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}`);
                 setButtonState(["default", "default", "default", "default"]);
             }, answerFeedbackTime);        
         setCorrectAnswer(prevCount =>(prevCount + 1));
         console.log(`Submitting answer: ${answer}, current streak: ${streak}`);         
     }   
 
-    let blockNavigation = true;
-    // console.log("Block navigation:", blockNavigation.current);
+    let blockNavigation = true;    
     useBlocker((tx) => {
         console.log("Entered useBlocker", tx);
         if (blockNavigation){
@@ -106,6 +108,10 @@ export function Quiz() {
         }
         return false;              
     });
+
+    if (currentStep > totalSteps) {
+        console.log("Quiz completed");
+    }
 
     return (
         <main className={styles.quizContainer}>
