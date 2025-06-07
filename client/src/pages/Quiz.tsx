@@ -5,13 +5,14 @@ import { GeneralButton } from "./components/GeneralButton";
 import { useEffect, useRef, useState } from "react";
 import { Confirm } from "./components/Confirm";
 import { useQuestion } from "../hooks/useQuestion";
+import { Summary } from "./components/Summary";
 
 
-const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY) || 15;
-const timerValueMedium = Number(import.meta.env.VITE_QUIZ_TIME_MEDIUM) || 10;
-const timerValueHard = Number(import.meta.env.VITE_QUIZ_TIME_HARD) || 10;
+const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY) || 10;
+const timerValueMedium = Number(import.meta.env.VITE_QUIZ_TIME_MEDIUM) || 5;
+const timerValueHard = Number(import.meta.env.VITE_QUIZ_TIME_HARD) || 5;
 
-const totalStepsEasy = 2;//Number(import.meta.env.VITE_QUIZ_STEPS_EASY) || 10;
+const totalStepsEasy = Number(import.meta.env.VITE_QUIZ_STEPS_EASY) || 10;
 const totalStepsMedium = Number(import.meta.env.VITE_QUIZ_STEPS_MEDIUM) || 15;;
 const totalStepsHard = Number(import.meta.env.VITE_QUIZ_STEPS_HARD) || 20;
 
@@ -35,6 +36,7 @@ export function Quiz() {
     const [streak, setStreak] = useState<number>(0); 
     const [showConfirm, setShowConfirm] = useState<boolean>(false);
     const [buttonState, setButtonState] = useState<("default" | "correct" | "wrong")[]>(["default", "default", "default", "default"]);
+    const [showSummary, setShowSummary] = useState<boolean>(false);
 
     const {question,error} = useQuestion(category, difficulty, streak, currentStep, totalSteps);
 
@@ -109,9 +111,13 @@ export function Quiz() {
         return false;              
     });
 
-    if (currentStep > totalSteps) {
-        console.log("Quiz completed");
-    }
+    useEffect(() => {
+        if (currentStep > totalSteps) {
+            console.log("Quiz completed");
+            console.log(`Total time: ${totalTime}, Correct answers: ${correctAnswers}, Total steps: ${totalSteps}, time left: ${timerValue*totalSteps-totalTime}, score: ${calculateScore (correctAnswers, totalSteps, timerValue*totalSteps-totalTime, difficulty)}`);
+            setShowSummary(true);
+        }
+    }, [currentStep]);
 
     return (
         <main className={styles.quizContainer}>
@@ -155,8 +161,24 @@ export function Quiz() {
                             setShowConfirm(false);}
                 }
                 onNo = {() => setShowConfirm(false)}
-                />)}           
+                />)}  
+
+            {showSummary && <Summary correctAnswers={correctAnswers} totalSteps={totalSteps} timeLeft={timerValue-totalTime} 
+                    score={calculateScore (correctAnswers, totalSteps, timerValue*totalSteps-totalTime, difficulty)} 
+                    onOk = {() => {
+                                    blockNavigation = false;
+                                    navigate("/history");
+                                    setShowSummary(false);
+                                }} 
+                />}
         </main>
     );
+}
+
+function calculateScore(correctAnswers: number, totalSteps: number, timeLeft: number, difficulty: string): number {
+    const difficultyFactor = difficulty === "Easy" ? 1 : difficulty === "Medium" ? 1.5 : 2;
+    const timeFactor = timeLeft * difficultyFactor; 
+    const score = (correctAnswers / totalSteps) * 100;
+    return Math.round((1+timeFactor) * score); 
 }
 
