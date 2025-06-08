@@ -1,9 +1,10 @@
 
 import styles from "./App.module.scss";
-import { Outlet, useLocation, useNavigate} from "react-router";
+import { Outlet, useLocation, useNavigate, useLoaderData} from "react-router";
 import { NavButton } from "./pages/components/NavButton";
 import { useEffect, useState } from "react";
 import { Spinner } from "./pages/components/Spinner";
+import { LogIn, Home, Trophy } from "lucide-react";
 
 export function App() {  
 
@@ -19,10 +20,12 @@ function Nav() {
   const navigate = useNavigate();
   const location = useLocation();
   const [loading, setLoading] = useState<boolean>(false);
-   useEffect(() => {
+  const username = useLoaderData<string>();
+  useEffect(() => {
     setLoading(false); // Hide spinner on any route change
   }, [location]);
   // const {doLogOut} = useDoLogOut(() => navigate("./login"));
+
 
   return (    
     <nav className={styles.nav}>
@@ -35,15 +38,15 @@ function Nav() {
       
       <menu className={styles.navMenu}>
         <li>
-          <NavButton label="🏠" ariaLabel="Navigate to Home Page" onClick={() => navigate("/")}/>          
+          <NavButton icon={<Home className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Navigate to Home Page" onClick={() => navigate("/")}/>          
         </li>
         <li>
-          <NavButton label="🏆" ariaLabel="Navigate to Leader Board" onClick={() => {
+          <NavButton icon={<Trophy className={styles.lucideIcon} color="var(--trophy-gold)" />} ariaLabel="Navigate to Leader Board" onClick={() => {
             setLoading(true);
             navigate("/leaderboard");}} />                    
         </li>
         <li>
-          <NavButton label="🔓" ariaLabel="Log out Button"/>
+          <NavButton icon={<LogIn className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Log In Button"/>
           {/* <NavButton label="LogOut" onClick={doLogOut}/>                               */}
         </li>
       </menu>

@@ -8,7 +8,7 @@ import { Confirm } from "./components/Confirm";
 import { useCategories } from "../hooks/useCategories";
 
 export function Home() {
-    const [username, setUsername] = useState<string | null>();
+    const username = useLoaderData<string>();
     const [difficulty, setDifficulty] = useState<string>("Easy");
     const [category, setCategory] = useState<string>("General");
     const navigate = useNavigate();
