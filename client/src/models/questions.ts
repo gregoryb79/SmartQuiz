@@ -24,6 +24,17 @@ export async function getQuestion(category:string, difficulty:string, streak : n
   
 }
 
+export async function getQuizCategories(): Promise<string[]> {
+    // This function should return a list of quiz categories
+    // For now, we will return a static list
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(["Geography", "Science", "Literature", "Biology", "Art", "Mathematics", "Sports"]);
+        }, 1000);
+    }); 
+    
+}
+
 const questions: Question[] = [
     {
         question: "What is the capital city of France?",
