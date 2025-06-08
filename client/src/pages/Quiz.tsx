@@ -50,8 +50,7 @@ export function Quiz() {
     }, [question]);
 
     useEffect(() => {
-        if (!timerActive) return;
-        // if (currentStep === totalSteps) return;
+        if (!timerActive) return;        
         if (timeLeft <= 0) {            
             console.log("Time's up!");
             const data = new FormData();

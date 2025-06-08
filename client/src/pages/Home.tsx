@@ -4,21 +4,30 @@ import { GeneralButton } from "./components/GeneralButton";
 import styles from "./Home.module.scss";
 import favicon from "../assets/favicon.png";
 import { Spinner } from "./components/Spinner";
+import { Confirm } from "./components/Confirm";
 import { useCategories } from "../hooks/useCategories";
 
 export function Home() {
-    const [username, setUsername] = useState<string | null>("Username");
+    const [username, setUsername] = useState<string | null>();
     const [difficulty, setDifficulty] = useState<string>("Easy");
     const [category, setCategory] = useState<string>("General");
     const navigate = useNavigate();
     const {categories, loading, setLoading, error} = useCategories();
+    const [showConfirm, setShowConfirm] = useState<boolean>(false);
        
   return (
    <main className={styles.homeMain}>
-        <h2>Welcome, {username} 👋🏻</h2>
+        <h2>Welcome{username ? "," : "!"} {username} 👋🏻</h2>
         {loading && <Spinner/>} 
         <section className={styles.mainButtons}>
-            <GeneralButton label="Start New Quiz" onClick={() => navigate("/new-quiz", { state: { category, difficulty } })}/>
+            {/* <GeneralButton label="Start New Quiz" onClick={() => navigate("/new-quiz", { state: { category, difficulty } })}/> */}
+            <GeneralButton label="Start New Quiz" onClick={() => {
+                    if (!username) {
+                        setShowConfirm(true);
+                    } else {
+                        navigate("/new-quiz", { state: { category, difficulty } });
+                    }
+                }}/>                
             <GeneralButton label="Leaderboard" onClick={() => {
                 setLoading(true);
                 navigate("/leaderboard")}}/>
@@ -43,6 +52,13 @@ export function Home() {
             </section>          
         </form>
         <img className={styles.appIcon} src={favicon} alt="application icon" />
+
+        {showConfirm && (<Confirm question={"You are not Logged In. No scores will be saved. Do you want to continue?"} 
+                        onYes = {() => {                                    
+                                    navigate("/new-quiz", { state: { category, difficulty } })
+                                    setShowConfirm(false);}}
+                        onNo = {() => setShowConfirm(false)}
+        />)}  
    </main>
   );
 }
