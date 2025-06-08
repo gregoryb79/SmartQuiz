@@ -148,7 +148,7 @@ export function Quiz() {
 
             <section className={styles.quizFooter}>
                 
-                <p className={styles.quizScore}>Total Score: {(100*correctAnswers/totalSteps)+"%"}</p>
+                <p className={styles.quizScore}>{`${correctAnswers} correct of ${totalSteps}`}</p>
                 <GeneralButton label="Quit Quiz" onClick={() => setShowConfirm(true)}/>
             </section>
 
@@ -167,7 +167,7 @@ export function Quiz() {
                     score={calculateScore (correctAnswers, totalSteps, timerValue*totalSteps-totalTime, difficulty)} 
                     onOk = {() => {
                                     blockNavigation = false;
-                                    navigate("/history");
+                                    navigate("/leaderboard");
                                     setShowSummary(false);
                                 }} 
                 />}
@@ -177,7 +177,7 @@ export function Quiz() {
 
 function calculateScore(correctAnswers: number, totalSteps: number, timeLeft: number, difficulty: string): number {
     const difficultyFactor = difficulty === "Easy" ? 1 : difficulty === "Medium" ? 1.5 : 2;
-    const timeFactor = timeLeft * difficultyFactor; 
+    const timeFactor = timeLeft/10 * difficultyFactor; 
     const score = (correctAnswers / totalSteps) * 100;
     return Math.round((1+timeFactor) * score); 
 }
