@@ -1,0 +1,59 @@
+import { GeneralButton } from './components/GeneralButton';
+import styles from './LogIn.module.scss';
+import favicon from "../assets/favicon.png";
+import { useLoaderData, useNavigate, useRevalidator } from 'react-router';
+import { useDoLogIn } from '../hooks/useLogIn';
+import { Spinner } from './components/Spinner';
+import { useEffect } from 'react';
+
+
+export function LogIn() { 
+
+    const navigate = useNavigate();
+    const { revalidate } = useRevalidator();
+
+    const username = useLoaderData<string>();
+    useEffect(() => {
+        if (username) {
+            console.log(`User is already logged in as ${username}. Redirecting to home page...`);
+            navigate("/");
+        }
+    }, [username]);  
+    
+    function handleLogIn(event: React.FormEvent<HTMLFormElement>) {        
+        console.log("Log In button clicked");
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);        
+        const email = formData.get("email") as string;
+        const password = formData.get("password") as string;        
+        console.log(`email = ${email}, password = ${password}`);
+        doLogIn(email, password);
+    }
+    const { loading: loadingLogin, doLogIn } = useDoLogIn(() => {
+        revalidate();
+        navigate("/");
+    });
+
+    return (
+        <main className={styles.loginContainer}>
+            <h2>Log In</h2>            
+            {loadingLogin && <Spinner/>} 
+            <form className={styles.loginForm} onSubmit={handleLogIn}>
+                <section>
+                    <label htmlFor="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your e-mail" required />
+                </section>
+                <section>
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                </section>
+                <GeneralButton label="Log In" />
+                <p>Don't have an account? <a href="/register">Register</a></p>
+                            
+            </form>
+
+            <img className={styles.appIcon} src={favicon} alt="application icon" />
+            
+        </main>
+    );
+}

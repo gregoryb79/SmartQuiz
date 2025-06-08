@@ -11,8 +11,8 @@ import { getScores } from "./models/scores";
 // import { getQuizCategories } from "./models/questions";
 import { getUserName } from "./models/users";
 // import { HandleOrder } from "./pages/HandleOrder";
-// import { LogIn } from "./pages/LogIn";
-// import { Register } from "./pages/Register";
+import { LogIn } from "./pages/LogIn";
+import { Register } from "./pages/Register";
 
 
 
@@ -41,14 +41,20 @@ export const router = createBrowserRouter([
                     return getScores();
                 }
             },
-            // {
-            //     path: "/login",
-            //     Component: LogIn,
-            // },
-            // {
-            //     path: "/register",
-            //     Component: Register,
-            // },
+            {
+                path: "/login",
+                Component: LogIn,
+                loader: () => {
+                    return getUserName();
+                },
+            },
+            {
+                path: "/register",
+                Component: Register,
+                loader: () => {
+                    return getUserName();
+                },
+            },
         ],
     },
 ]);

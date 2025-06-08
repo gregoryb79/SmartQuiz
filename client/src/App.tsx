@@ -1,10 +1,11 @@
 
 import styles from "./App.module.scss";
-import { Outlet, useLocation, useNavigate, useLoaderData} from "react-router";
+import { Outlet, useLocation, useNavigate, useLoaderData, useRevalidator} from "react-router";
 import { NavButton } from "./pages/components/NavButton";
 import { useEffect, useState } from "react";
 import { Spinner } from "./pages/components/Spinner";
-import { LogIn, Home, Trophy } from "lucide-react";
+import { LogIn, Home, Trophy, LogOut } from "lucide-react";
+import { doLogOut } from "./models/users";
 
 export function App() {  
 
@@ -21,10 +22,12 @@ function Nav() {
   const location = useLocation();
   const [loading, setLoading] = useState<boolean>(false);
   const username = useLoaderData<string>();
+  const { revalidate } = useRevalidator();
+  // const username = "gregoryb79"; // Hardcoded for testing purposes;
   useEffect(() => {
     setLoading(false); // Hide spinner on any route change
   }, [location]);
-  // const {doLogOut} = useDoLogOut(() => navigate("./login"));
+
 
 
   return (    
@@ -46,8 +49,12 @@ function Nav() {
             navigate("/leaderboard");}} />                    
         </li>
         <li>
-          <NavButton icon={<LogIn className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Log In Button"/>
-          {/* <NavButton label="LogOut" onClick={doLogOut}/>                               */}
+          {!username && <NavButton icon={<LogIn className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Log In Button" onClick={() => navigate("/login")}/>}
+          {username && <NavButton icon={<LogOut className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Log Out Button" onClick={() => {
+              doLogOut();
+              revalidate();
+              navigate("/login");
+            }}/>}
         </li>
       </menu>
     </nav>

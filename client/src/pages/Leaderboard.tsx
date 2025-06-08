@@ -22,7 +22,10 @@ type leaderBoardListProps = {
 function LeaderoardList({ leaderboard }: leaderBoardListProps) {
     if (!leaderboard.length) {
         return(
-            <p>No quiz history yet... Let's do some quizes!</p>
+            <>
+                <p>Ooops, something went wrong and leaderboard not available...</p>
+                <p>Try again later...</p>
+            </>
         );
     }
 
