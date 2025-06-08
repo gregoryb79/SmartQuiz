@@ -4,13 +4,15 @@ import favicon from "../assets/favicon.png";
 import { useLoaderData, useNavigate, useRevalidator } from 'react-router';
 import { useDoLogIn } from '../hooks/useLogIn';
 import { Spinner } from './components/Spinner';
-import { useEffect } from 'react';
+import { ErrorMsg } from './components/ErrorMsg';
+import { useEffect, useState } from 'react';
 
 
 export function LogIn() { 
 
     const navigate = useNavigate();
     const { revalidate } = useRevalidator();
+    const [showError, setShowError] = useState(false);
 
     const username = useLoaderData<string>();
     useEffect(() => {
@@ -29,10 +31,17 @@ export function LogIn() {
         console.log(`email = ${email}, password = ${password}`);
         doLogIn(email, password);
     }
-    const { loading: loadingLogin, doLogIn } = useDoLogIn(() => {
+    const { error, loading: loadingLogin, doLogIn } = useDoLogIn(() => {
         revalidate();
         navigate("/");
-    });
+    });    
+
+    useEffect(() => {
+        if (error) {
+            console.error("Error during login:", error);
+            setShowError(true);
+        }
+    }, [error]);
 
     return (
         <main className={styles.loginContainer}>
@@ -53,6 +62,7 @@ export function LogIn() {
             </form>
 
             <img className={styles.appIcon} src={favicon} alt="application icon" />
+            {showError && error && <ErrorMsg message={error} onOk={() => {setShowError(false)}} />}
             
         </main>
     );

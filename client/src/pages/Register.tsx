@@ -4,13 +4,15 @@ import favicon from "../assets/favicon.png";
 import { useLoaderData, useNavigate, useRevalidator } from 'react-router';
 import { useDoRegister } from '../hooks/useLogIn';
 import { Spinner } from './components/Spinner';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ErrorMsg } from './components/ErrorMsg';
 
 
 export function Register() {   
 
     const navigate = useNavigate();
     const { revalidate } = useRevalidator();
+    const [showError, setShowError] = useState(false);
     
     const username = useLoaderData<string>();
     useEffect(() => {
@@ -32,10 +34,17 @@ export function Register() {
         doRegister(email, username, password, repeatPassword);
     }
 
-    const {loading: loadingRegister, doRegister } = useDoRegister(() => {
+    const {error,loading: loadingRegister, doRegister } = useDoRegister(() => {
         revalidate();
         navigate("/");
     });
+
+    useEffect(() => {
+        if (error) {
+            console.error("Error during login:", error);
+            setShowError(true);
+        }
+    }, [error]);
 
     return (
         <main className={styles.registerContainer}>
@@ -63,6 +72,7 @@ export function Register() {
             </form>
 
             <img className={styles.appIcon} src={favicon} alt="application icon" />
+            {showError && error && <ErrorMsg message={error} onOk={() => {setShowError(false)}} />}
             
         </main>
     );
