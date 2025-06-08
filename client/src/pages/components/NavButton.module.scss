@@ -4,6 +4,6 @@
     color: var(--dark-text);
     font-size: var(--font-lg);
     &:hover{
-        color: var(--light-text);
+        transform: scale(1.3);
     }
 }

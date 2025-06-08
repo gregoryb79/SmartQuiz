@@ -29,13 +29,13 @@ function Nav() {
       
       <menu className={styles.navMenu}>
         <li>
-          <NavButton label="Home" onClick={() => navigate("/")}/>          
+          <NavButton label="🏠" ariaLabel="Navigate to Home Page" onClick={() => navigate("/")}/>          
         </li>
         <li>
-          <NavButton label="History" onClick={() => navigate("/history")} />                    
+          <NavButton label="🏆" ariaLabel="Navigate to Leader Board" onClick={() => navigate("/history")} />                    
         </li>
         <li>
-          <NavButton label="LogOut"/>
+          <NavButton label="🔓" ariaLabel="Log out Button"/>
           {/* <NavButton label="LogOut" onClick={doLogOut}/>                               */}
         </li>
       </menu>

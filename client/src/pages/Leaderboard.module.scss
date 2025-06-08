@@ -1,16 +1,17 @@
 @use '../styles/mixins' as *;
 
-.historyContainer{
+.leaderBoardContainer{
     @include pageFrame;   
    
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
     padding: 2rem;
     
 }
 
-.historyList{
+.leadeBoardList{
     @include shadowBorder;
     width: 100%;
     margin: 0 auto;

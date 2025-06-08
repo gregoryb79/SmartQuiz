@@ -6,8 +6,8 @@ import { App } from "./App";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Quiz } from "./pages/Quiz";
-import { History } from "./pages/History";
-import { getHistory } from "./models/history";
+import { Leaderboard } from "./pages/Leaderboard";
+import { getScores } from "./models/scores";
 // import { HandleOrder } from "./pages/HandleOrder";
 // import { LogIn } from "./pages/LogIn";
 // import { Register } from "./pages/Register";
@@ -24,10 +24,10 @@ export const router = createBrowserRouter([
             { path: "/", Component: Home },         
             { path: "/new-quiz", Component: Quiz },
             { 
-                path: "/history", 
-                Component: History, 
+                path: "/leaderboard", 
+                Component: Leaderboard, 
                 loader: () => {
-                    return getHistory();
+                    return getScores();
                 }
             },
             // {
