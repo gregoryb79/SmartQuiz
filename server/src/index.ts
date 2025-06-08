@@ -1,12 +1,12 @@
-import "dotenv/config";
+// import "dotenv/config";
 import dotenv from "dotenv";
-
+dotenv.config({ path: "./.env" });
 
 import { createServer } from "http";
 import mongoose from "mongoose";
 import { app } from "./app";
 
-dotenv.config({ path: "../.env" });
+
 const server = createServer(app);
 const port = process.env.PORT || 5000;
 

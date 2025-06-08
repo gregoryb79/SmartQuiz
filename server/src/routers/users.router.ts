@@ -3,5 +3,5 @@ export const router = express.Router();
 
 router.get("/", async (_, res) => {
     res.status(200).json({
-        message: "Welcome to the SmartQuiz history API",});
+        message: "Welcome to the SmartQuiz users API",});
 });

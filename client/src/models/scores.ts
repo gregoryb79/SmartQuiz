@@ -69,8 +69,15 @@ const mockLeaderboard: scoreItem[] = [
         username: "Judy"
     }
 ];
-
+import { apiClient } from "./apiClient";
 export async function getScores(): Promise<scoreItem[]> {
+
+    try {
+        const res = await apiClient.get("/leaderboard");
+        console.log(res.data);
+    }catch (error) {
+        console.error("Error fetching leaderboard:", error);
+    }
     
     return new Promise((resolve) => {
         setTimeout(() => {
