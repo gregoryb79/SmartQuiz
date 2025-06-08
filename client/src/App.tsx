@@ -1,9 +1,9 @@
 
 import styles from "./App.module.scss";
-import { Outlet, useNavigate} from "react-router";
-// import { useState } from "react";
-import appIcon from "./assets/favicon.png";
+import { Outlet, useLocation, useNavigate} from "react-router";
 import { NavButton } from "./pages/components/NavButton";
+import { useEffect, useState } from "react";
+import { Spinner } from "./pages/components/Spinner";
 
 export function App() {  
 
@@ -17,10 +17,16 @@ export function App() {
 
 function Nav() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [loading, setLoading] = useState<boolean>(false);
+   useEffect(() => {
+    setLoading(false); // Hide spinner on any route change
+  }, [location]);
   // const {doLogOut} = useDoLogOut(() => navigate("./login"));
 
-  return (
+  return (    
     <nav className={styles.nav}>
+      {loading && <Spinner/>} 
       <section className={styles.logoLine}>
         {/* <img src={appIcon} alt="smart quizz icon" /> */}
         <div className={styles.icon}></div>
@@ -32,7 +38,9 @@ function Nav() {
           <NavButton label="🏠" ariaLabel="Navigate to Home Page" onClick={() => navigate("/")}/>          
         </li>
         <li>
-          <NavButton label="🏆" ariaLabel="Navigate to Leader Board" onClick={() => navigate("/history")} />                    
+          <NavButton label="🏆" ariaLabel="Navigate to Leader Board" onClick={() => {
+            setLoading(true);
+            navigate("/leaderboard");}} />                    
         </li>
         <li>
           <NavButton label="🔓" ariaLabel="Log out Button"/>

@@ -22,16 +22,7 @@ export const router = createBrowserRouter([
         children: [
             // { index: true, loader: () => redirect("/orders-history") },
             { path: "*", Component: NotFound },   
-            { 
-                path: "/", 
-                Component: Home,
-                loader: () => {
-                    // This is where you can fetch initial data for the home page
-                    // For example, fetching user data or quiz categories
-                    return getQuizCategories();
-                } 
-
-            },         
+            { path: "/", Component: Home},         
             { path: "/new-quiz", Component: Quiz },
             { 
                 path: "/leaderboard", 

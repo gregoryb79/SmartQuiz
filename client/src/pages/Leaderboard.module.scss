@@ -21,8 +21,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem;
+        padding: 0.75rem;
         border-bottom: 1px solid var(--gray-border);
+        font-size: var(--font-lg);
 
         span {
             flex: 1 1 0;

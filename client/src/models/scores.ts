@@ -37,6 +37,36 @@ const mockLeaderboard: scoreItem[] = [
         rank: 5,
         score: 60,
         username: "Eve"
+    },
+    {
+        _id: "6",
+        rank: 6,
+        score: 50,
+        username: "Frank"
+    },
+    {
+        _id: "7",
+        rank: 7,
+        score: 40,
+        username: "Grace"
+    },
+    {
+        _id: "8",
+        rank: 8,
+        score: 30,
+        username: "Heidi"
+    },
+    {
+        _id: "9",
+        rank: 9,
+        score: 20,
+        username: "Ivan"
+    },
+    {
+        _id: "10",
+        rank: 10,
+        score: 10,
+        username: "Judy"
     }
 ];
 
