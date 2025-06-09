@@ -1,5 +1,17 @@
 import { apiClient, clearToken, setToken } from "./apiClient";
 
+export type User = {
+    _id: string;
+    email: string;
+    username: string;
+    totalScore: number;
+    topScore: number;
+    totalGames: number;
+    lastScore: number;
+    createdAt: string;
+    updatedAt: string;
+};
+
 export function getUserName(): string | null {
     const user = localStorage.getItem("user");
     if (user) {
@@ -48,12 +60,35 @@ export async function postRegister(email: string, username: string, password: st
 
     localStorage.setItem("user", JSON.stringify({ username }));
 
-    return true;
-
-    // return new Promise((resolve) => {
-    //     setTimeout(() => {
-    //     resolve(true);
-    //     }, 1000);
-    // });
+    return true;    
 }
-    
+
+export async function getUserProfile(): Promise<User> {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        throw new Error("User is not logged in. Please log in to access your profile.");
+    }
+
+    const payload = token.split('.')[1];
+    const decoded = JSON.parse(atob(payload));
+    const userId =  decoded.sub;
+
+    try {
+        const res = await apiClient.get(`/users/${userId}`);
+        return res.data;
+    } catch (error) {
+        console.error("Error fetching user profile:", error);
+        throw new Error("Failed to fetch user profile. Please try again later.");
+    }
+}
+
+export type UserScore = Omit<User,"email" | "createdAt" | "updatedAt" | "lastScore" | "totalGames" | "topScore">;
+export async function getUsersScores(): Promise<UserScore[]> {
+    try {
+        const res = await apiClient.get("/users");
+        return res.data as UserScore[];        
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        throw new Error("Failed to fetch users. Please try again later.");
+    }
+}

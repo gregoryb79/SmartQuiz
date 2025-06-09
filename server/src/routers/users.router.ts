@@ -19,6 +19,17 @@ function hashPasswordWithSalt(password: string, salt: string) {
 }
 
 router.get("/", async (_, res) => {
+    console.log("Getting users an their scores");
+
+    try {
+        const users = await User.find({}, { username: 1, totalScore: 1}).sort({ totalScore: -1 });
+        console.log("Users found:", users);
+
+        res.status(200).json(users);
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
     res.status(200).json({
         message: "Welcome to the SmartQuiz users API",});
 });

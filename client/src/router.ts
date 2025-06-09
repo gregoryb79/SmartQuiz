@@ -7,7 +7,7 @@ import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Quiz } from "./pages/Quiz";
 import { Leaderboard } from "./pages/Leaderboard";
-import { getScores } from "./models/scores";
+import { getUsersScores } from "./models/users";
 // import { getQuizCategories } from "./models/questions";
 import { getUserName } from "./models/users";
 // import { HandleOrder } from "./pages/HandleOrder";
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
                 path: "/leaderboard", 
                 Component: Leaderboard, 
                 loader: () => {
-                    return getScores();
+                    return getUsersScores();
                 }
             },
             {
@@ -66,3 +66,5 @@ export const router = createBrowserRouter([
         ],
     },
 ]);
+
+

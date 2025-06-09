@@ -1,12 +1,12 @@
 import { use } from 'react';
 import styles from './Leaderboard.module.scss';
 import { useLoaderData } from 'react-router';
-import { type LeaderBoard } from '../models/scores';
+import { type UserScore } from '../models/users';
 import { Trophy } from "lucide-react";
 
 export function Leaderboard() {
 
-    const leaderboard = useLoaderData<LeaderBoard>();
+    const leaderboard = useLoaderData<UserScore[]>();
 
     return (
         <main className={styles.leaderBoardContainer}>
@@ -18,7 +18,7 @@ export function Leaderboard() {
 }
 
 type leaderBoardListProps = {
-    leaderboard: LeaderBoard;
+    leaderboard: UserScore[];
 };
 function LeaderoardList({ leaderboard }: leaderBoardListProps) {
     if (!leaderboard.length) {
@@ -32,28 +32,28 @@ function LeaderoardList({ leaderboard }: leaderBoardListProps) {
 
     return (
         <ul className={styles.leadeBoardList}>
-            {leaderboard.map((item) => (
+            {leaderboard.map((item,index) => (
                 <li key={item._id} className={styles.historyItem}>
                     <span>
-                      {item.rank === 1 && (
+                      {index === 0 && (
                         <>
                           <Trophy className={styles.lucideIcon} color="var(--trophy-gold)" /> 1
                         </>
                       )}
-                      {item.rank === 2 && (
+                      {index === 1 && (
                         <>
                             <Trophy className={styles.lucideIcon} color="var(--trophy-silver)" /> 2
                         </>                        
                       )}
-                      {item.rank === 3 && (
+                      {index === 2 && (
                         <>
                             <Trophy className={styles.lucideIcon} color="var(--trophy-bronze)" /> 3
                         </>
                         
                       )}
-                      {[4,5,6,7,8,9,10].includes(item.rank) && item.rank}
+                      {[3,4,5,6,7,8,9].includes(index) && index+1}
                     </span>
-                    <span>{item.score}</span>
+                    <span>{item.totalScore}</span>
                     <span>{item.username}</span>                                      
                 </li>
             ))}
