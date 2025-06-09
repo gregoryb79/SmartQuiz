@@ -4,7 +4,7 @@ import { Outlet, useLocation, useNavigate, useLoaderData, useRevalidator} from "
 import { NavButton } from "./pages/components/NavButton";
 import { useEffect, useState } from "react";
 import { Spinner } from "./pages/components/Spinner";
-import { LogIn, Home, Trophy, LogOut } from "lucide-react";
+import { LogIn, Home, Trophy, LogOut, User } from "lucide-react";
 import { doLogOut } from "./models/users";
 
 export function App() {  
@@ -40,6 +40,11 @@ function Nav() {
       </section>
       
       <menu className={styles.navMenu}>
+        <li>
+          <NavButton icon={<User className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Navigate to Profile Page" onClick={() => {
+            setLoading(true);
+            navigate("/profile");}}/>
+        </li>
         <li>
           <NavButton icon={<Home className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Navigate to Home Page" onClick={() => navigate("/")}/>          
         </li>

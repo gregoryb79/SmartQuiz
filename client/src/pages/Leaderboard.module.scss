@@ -28,10 +28,19 @@
         span {
             flex: 1 1 0;
             text-align: center;
+            position: relative;
         }
         
         &:last-child{
             border-bottom: none;
         }
     }
+}
+
+.lucideIcon{
+    width: var(--font-xxl);
+    height: var(--font-xxl);  
+    position: absolute;
+    right: 80%;     
+    top: calc(50% - var(--font-xxl) / 2);  
 }

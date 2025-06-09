@@ -2,6 +2,7 @@ import { use } from 'react';
 import styles from './Leaderboard.module.scss';
 import { useLoaderData } from 'react-router';
 import { type LeaderBoard } from '../models/scores';
+import { Trophy } from "lucide-react";
 
 export function Leaderboard() {
 
@@ -33,7 +34,25 @@ function LeaderoardList({ leaderboard }: leaderBoardListProps) {
         <ul className={styles.leadeBoardList}>
             {leaderboard.map((item) => (
                 <li key={item._id} className={styles.historyItem}>
-                    <span>{item.rank}</span>
+                    <span>
+                      {item.rank === 1 && (
+                        <>
+                          <Trophy className={styles.lucideIcon} color="var(--trophy-gold)" /> 1
+                        </>
+                      )}
+                      {item.rank === 2 && (
+                        <>
+                            <Trophy className={styles.lucideIcon} color="var(--trophy-silver)" /> 2
+                        </>                        
+                      )}
+                      {item.rank === 3 && (
+                        <>
+                            <Trophy className={styles.lucideIcon} color="var(--trophy-bronze)" /> 3
+                        </>
+                        
+                      )}
+                      {[4,5,6,7,8,9,10].includes(item.rank) && item.rank}
+                    </span>
                     <span>{item.score}</span>
                     <span>{item.username}</span>                                      
                 </li>
