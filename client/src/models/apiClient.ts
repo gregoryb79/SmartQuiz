@@ -18,6 +18,7 @@ apiClient.interceptors.request.use((config) => {
 
 
 export function getToken() {
+    
     return sessionStorage.getItem(tokenKeyName);
 }
 

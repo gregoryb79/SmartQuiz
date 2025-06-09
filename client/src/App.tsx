@@ -41,21 +41,21 @@ function Nav() {
       
       <menu className={styles.navMenu}>
         <li>
-          <NavButton icon={<User className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Navigate to Profile Page" onClick={() => {
+          <NavButton title="Profile" icon={<User className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Navigate to Profile Page" onClick={() => {
             setLoading(true);
             navigate("/profile");}}/>
         </li>
         <li>
-          <NavButton icon={<Home className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Navigate to Home Page" onClick={() => navigate("/")}/>          
+          <NavButton title="Home" icon={<Home className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Navigate to Home Page" onClick={() => navigate("/")}/>          
         </li>
         <li>
-          <NavButton icon={<Trophy className={styles.lucideIcon} color="var(--trophy-gold)" />} ariaLabel="Navigate to Leader Board" onClick={() => {
+          <NavButton title="Leader Board" icon={<Trophy className={styles.lucideIcon} color="var(--trophy-gold)" />} ariaLabel="Navigate to Leader Board" onClick={() => {
             setLoading(true);
             navigate("/leaderboard");}} />                    
         </li>
         <li>
-          {!username && <NavButton icon={<LogIn className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Log In Button" onClick={() => navigate("/login")}/>}
-          {username && <NavButton icon={<LogOut className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Log Out Button" onClick={() => {
+          {!username && <NavButton title="Log In" icon={<LogIn className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Log In Button" onClick={() => navigate("/login")}/>}
+          {username && <NavButton title="Log Out" icon={<LogOut className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Log Out Button" onClick={() => {
               doLogOut();
               revalidate();
               navigate("/login");
