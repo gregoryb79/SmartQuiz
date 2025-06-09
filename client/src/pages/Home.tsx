@@ -6,6 +6,7 @@ import favicon from "../assets/favicon.png";
 import { Spinner } from "./components/Spinner";
 import { Confirm } from "./components/Confirm";
 import { useCategories } from "../hooks/useCategories";
+import { ErrorMsg } from './components/ErrorMsg';
 
 export function Home() {
     const username = useLoaderData<string>();
@@ -14,6 +15,14 @@ export function Home() {
     const navigate = useNavigate();
     const {categories, loading, setLoading, error} = useCategories();
     const [showConfirm, setShowConfirm] = useState<boolean>(false);
+
+    const [showError, setShowError] = useState(false);
+    useEffect(() => {
+        if (error) {
+            console.error("Error getting categories:", error);
+            setShowError(true);
+        }
+    }, [error]);
        
   return (
    <main className={styles.homeMain}>
@@ -59,6 +68,7 @@ export function Home() {
                                     setShowConfirm(false);}}
                         onNo = {() => setShowConfirm(false)}
         />)}  
+        {showError && error && <ErrorMsg message={error} onOk={() => {setShowError(false)}} />}
    </main>
   );
 }

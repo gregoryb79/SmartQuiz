@@ -22,8 +22,8 @@ export function useCategories() {
                 console.log("Fetched categories:", categories);
                 setCategories(categories);
             } catch (error) {
-                console.error("Failed to fetch setCategories:", error);
-                setError("Failed to fetch question. Please try again later.");
+                console.error("Failed to fetch categories:", error);
+                setError("Failed to fetch categories. Please try again later.");
             }finally {
                 setLoading(false);
             }

@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
         difficulty: difficulty,        
         _id: { $nin: usedQuestions ? usedQuestions : [] }
     };
-    if (category === "General") {
+    if (category === "General") {        
         delete filter.category; 
     }
     if (streak > 2) {

@@ -19,19 +19,25 @@ export function resetUsedQuestions() {
 export async function getQuestion(category:string, difficulty:number, streak : number): Promise<Question> {
     console.log("Fetching question with params:", { category, difficulty, streak});
 
-     const res = await apiClient.post("/questions", {
+    try {
+        const res = await apiClient.post("/questions", {
         category,
         difficulty,
         streak,
         usedQuestions
-    });   
+        });   
 
-    const question = res.data as Question;   
-    usedQuestions.push(question._id);
-    console.log("New question: ", question);
-    console.log("Used questions: ", usedQuestions);
+        const question = res.data as Question;   
+        usedQuestions.push(question._id);
+        console.log("New question: ", question);
+        console.log("Used questions: ", usedQuestions);
 
-    return question;    
+        return question;
+    }catch (error) {
+        console.error("Error fetching question:", error);
+        throw new Error("Failed to fetch question. Please try again later.");
+    }
+        
   
 }
 

@@ -7,6 +7,7 @@ import { Confirm } from "./components/Confirm";
 import { useQuestion } from "../hooks/useQuestion";
 import { Summary } from "./components/Summary";
 import { resetUsedQuestions } from "../models/questions";
+import { ErrorMsg } from './components/ErrorMsg';
 
 
 const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY) || 10;
@@ -41,6 +42,14 @@ export function Quiz() {
     const [startQuiz, setStartQuiz] = useState<boolean>(true);
 
     const {question,error} = useQuestion(category, Number(difficulty), streak, currentStep, totalSteps);
+    
+    const [showError, setShowError] = useState(false);
+    useEffect(() => {
+        if (error) {
+            console.error("Error getting question:", error);
+            setShowError(true);
+        }
+    }, [error]);
 
     // console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}, total time: ${totalTime}, streak: ${streak}`);
     
@@ -179,7 +188,8 @@ export function Quiz() {
                                     setStartQuiz(false);
                                     setShowSummary(false);
                                 }} 
-                />}
+                            />}
+            {showError && error && <ErrorMsg message={error} onOk={() => {setShowError(false)}} />}
         </main>
     );
 }
