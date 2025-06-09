@@ -9,7 +9,7 @@ import { useCategories } from "../hooks/useCategories";
 
 export function Home() {
     const username = useLoaderData<string>();
-    const [difficulty, setDifficulty] = useState<string>("Easy");
+    const [difficulty, setDifficulty] = useState<string>("1");
     const [category, setCategory] = useState<string>("General");
     const navigate = useNavigate();
     const {categories, loading, setLoading, error} = useCategories();
@@ -36,9 +36,9 @@ export function Home() {
             <section>
                 <label htmlFor="Difficulty:">Start Difficulty:</label>
                 <select id="difficulty" name="difficulty" onChange={(e) => setDifficulty(e.target.value)} value={difficulty} disabled={loading}>   
-                    <option value="Easy">Easy</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Hard">Hard</option>
+                    <option value="1">Easy</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Hard</option>
                 </select>
             </section>
             <section>

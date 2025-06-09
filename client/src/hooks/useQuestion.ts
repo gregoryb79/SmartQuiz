@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getQuestion, type Question } from "../models/questions";
 
-export function useQuestion(category:string, difficulty: string, streak: number, step: number, totalSteps: number) {
+export function useQuestion(category:string, difficulty: number, streak: number, step: number, totalSteps: number) {
 
     const [question, setQuestion] = useState<Question>();
     const [error, setError] = useState<string>();

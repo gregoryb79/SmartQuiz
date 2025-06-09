@@ -22,9 +22,9 @@ export function Quiz() {
 
     const navigate = useNavigate()
     const location = useLocation();
-    const { category, difficulty } = location.state || {};        
-    const timerValue = difficulty === "Easy" ? timerValueEasy : difficulty === "Medium" ? timerValueMedium : timerValueHard; 
-    const totalSteps = difficulty === "Easy" ? totalStepsEasy : difficulty === "Medium" ? totalStepsMedium : totalStepsHard; 
+    const { category, difficulty } = location.state || {};       
+    const timerValue = difficulty === "1" ? timerValueEasy : difficulty === "2" ? timerValueMedium : timerValueHard; 
+    const totalSteps = difficulty === "1" ? totalStepsEasy : difficulty === "2" ? totalStepsMedium : totalStepsHard; 
     
     const answerFeedbackTime = 1000; // time in milliseconds to show answer feedback
     const [selected, setSelected] = useState<string>("");
@@ -40,7 +40,7 @@ export function Quiz() {
     const [showSummary, setShowSummary] = useState<boolean>(false);
     const [startQuiz, setStartQuiz] = useState<boolean>(true);
 
-    const {question,error} = useQuestion(category, difficulty, streak, currentStep, totalSteps);
+    const {question,error} = useQuestion(category, Number(difficulty), streak, currentStep, totalSteps);
 
     // console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}, total time: ${totalTime}, streak: ${streak}`);
     

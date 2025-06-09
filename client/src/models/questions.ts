@@ -17,37 +17,31 @@ export function resetUsedQuestions() {
 }
 
 export async function getQuestion(category:string, difficulty:number, streak : number): Promise<Question> {
-    const res = await apiClient.get("/questions", {
-        params: {
-            category: category,
-            difficulty: difficulty,
-            streak: streak
-        }});   
-        
-    const question = res.data as Question;
-    
-    
-    usedQuestions.push(question._id);
-    console.log("Used questions: ", usedQuestions);
+    console.log("Fetching question with params:", { category, difficulty, streak});
 
-    return new Promise((resolve) => {
-        setTimeout(() => {
-        resolve(question);
-        }, 1000);
+     const res = await apiClient.post("/questions", {
+        category,
+        difficulty,
+        streak,
+        usedQuestions
     });   
 
+    const question = res.data as Question;   
+    usedQuestions.push(question._id);
+    console.log("New question: ", question);
+    console.log("Used questions: ", usedQuestions);
+
+    return question;    
   
 }
 
 export async function getQuizCategories(): Promise<string[]> {
-    // This function should return a list of quiz categories
-    // For now, we will return a static list
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(["Geography", "Science", "Literature", "Biology", "Art", "Mathematics", "Sports"]);
-        }, 1000);
-    }); 
-    
+   
+    console.log("Fetching quiz categories...");
+    const res = await apiClient.get("/questions");
+    console.log("Categories fetched:", res.data.categories);
+
+    return res.data.categories as string[];    
 }
 
 const questions: Question[] = [
