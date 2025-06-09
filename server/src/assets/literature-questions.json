@@ -1,0 +1,446 @@
+[
+  {
+    "question": "Who wrote 'Romeo and Juliet'?",
+    "answers": ["William Shakespeare", "Jane Austen", "Mark Twain", "Charles Dickens"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who is the author of 'Harry Potter'?",
+    "answers": ["J.K. Rowling", "J.R.R. Tolkien", "Suzanne Collins", "Stephen King"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the name of the bear in 'Winnie-the-Pooh'?",
+    "answers": ["Paddington", "Baloo", "Winnie-the-Pooh", "Yogi"],
+    "correctAnswer": 2,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who wrote 'The Cat in the Hat'?",
+    "answers": ["Dr. Seuss", "Beatrix Potter", "Roald Dahl", "E.B. White"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who is the main character in 'The Adventures of Tom Sawyer'?",
+    "answers": ["Huckleberry Finn", "Tom Sawyer", "Jim", "Becky Thatcher"],
+    "correctAnswer": 1,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who wrote 'Charlotte's Web'?",
+    "answers": ["E.B. White", "Roald Dahl", "J.K. Rowling", "Lewis Carroll"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who is the author of 'The Hobbit'?",
+    "answers": ["J.R.R. Tolkien", "C.S. Lewis", "Philip Pullman", "J.K. Rowling"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who wrote 'Matilda'?",
+    "answers": ["Roald Dahl", "J.K. Rowling", "Dr. Seuss", "Beatrix Potter"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who is the author of 'Alice's Adventures in Wonderland'?",
+    "answers": ["Lewis Carroll", "L. Frank Baum", "Hans Christian Andersen", "A.A. Milne"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who wrote 'The Very Hungry Caterpillar'?",
+    "answers": ["Eric Carle", "Maurice Sendak", "Dr. Seuss", "Beatrix Potter"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who is the author of 'The Chronicles of Narnia'?",
+    "answers": ["C.S. Lewis", "J.R.R. Tolkien", "Philip Pullman", "J.K. Rowling"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who wrote 'Charlie and the Chocolate Factory'?",
+    "answers": ["Roald Dahl", "E.B. White", "J.K. Rowling", "Dr. Seuss"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who is the main character in 'The Jungle Book'?",
+    "answers": ["Mowgli", "Baloo", "Bagheera", "Shere Khan"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who wrote 'Green Eggs and Ham'?",
+    "answers": ["Dr. Seuss", "Roald Dahl", "E.B. White", "Beatrix Potter"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+  {
+    "question": "Who is the author of 'Peter Rabbit'?",
+    "answers": ["Beatrix Potter", "A.A. Milne", "Lewis Carroll", "Dr. Seuss"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 1
+  },
+
+  {
+    "question": "Who wrote 'Pride and Prejudice'?",
+    "answers": ["Jane Austen", "Charlotte Brontë", "Emily Brontë", "Mary Shelley"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who is the author of 'Moby-Dick'?",
+    "answers": ["Herman Melville", "Nathaniel Hawthorne", "Mark Twain", "Edgar Allan Poe"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who wrote 'Great Expectations'?",
+    "answers": ["Charles Dickens", "Jane Austen", "George Eliot", "Thomas Hardy"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who is the author of 'The Picture of Dorian Gray'?",
+    "answers": ["Oscar Wilde", "Bram Stoker", "Mary Shelley", "Emily Brontë"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who wrote 'Frankenstein'?",
+    "answers": ["Mary Shelley", "Bram Stoker", "Oscar Wilde", "Emily Brontë"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who is the author of 'Dracula'?",
+    "answers": ["Bram Stoker", "Mary Shelley", "Oscar Wilde", "Charles Dickens"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who wrote 'Jane Eyre'?",
+    "answers": ["Charlotte Brontë", "Emily Brontë", "Jane Austen", "George Eliot"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who is the author of 'Wuthering Heights'?",
+    "answers": ["Emily Brontë", "Charlotte Brontë", "Jane Austen", "Mary Shelley"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who wrote 'The Adventures of Huckleberry Finn'?",
+    "answers": ["Mark Twain", "Charles Dickens", "Herman Melville", "Nathaniel Hawthorne"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who is the author of 'Little Women'?",
+    "answers": ["Louisa May Alcott", "Jane Austen", "Emily Brontë", "Charlotte Brontë"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who wrote 'The Scarlet Letter'?",
+    "answers": ["Nathaniel Hawthorne", "Herman Melville", "Mark Twain", "Charles Dickens"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who is the author of 'Crime and Punishment'?",
+    "answers": ["Fyodor Dostoevsky", "Leo Tolstoy", "Anton Chekhov", "Ivan Turgenev"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who wrote 'War and Peace'?",
+    "answers": ["Leo Tolstoy", "Fyodor Dostoevsky", "Anton Chekhov", "Ivan Turgenev"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who is the author of 'Anna Karenina'?",
+    "answers": ["Leo Tolstoy", "Fyodor Dostoevsky", "Anton Chekhov", "Ivan Turgenev"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who wrote 'The Count of Monte Cristo'?",
+    "answers": ["Alexandre Dumas", "Victor Hugo", "Jules Verne", "Emile Zola"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+  {
+    "question": "Who is the author of 'Les Misérables'?",
+    "answers": ["Victor Hugo", "Alexandre Dumas", "Jules Verne", "Emile Zola"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 2
+  },
+
+  {
+    "question": "Who wrote 'Ulysses'?",
+    "answers": ["James Joyce", "Samuel Beckett", "William Faulkner", "Virginia Woolf"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who is the author of 'The Sound and the Fury'?",
+    "answers": ["William Faulkner", "James Joyce", "Virginia Woolf", "F. Scott Fitzgerald"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who wrote 'To the Lighthouse'?",
+    "answers": ["Virginia Woolf", "James Joyce", "William Faulkner", "F. Scott Fitzgerald"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who is the author of 'The Trial'?",
+    "answers": ["Franz Kafka", "Albert Camus", "Jean-Paul Sartre", "Hermann Hesse"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who wrote 'One Hundred Years of Solitude'?",
+    "answers": ["Gabriel García Márquez", "Mario Vargas Llosa", "Isabel Allende", "Jorge Luis Borges"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who is the author of 'The Stranger'?",
+    "answers": ["Albert Camus", "Jean-Paul Sartre", "Franz Kafka", "Hermann Hesse"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who wrote 'The Metamorphosis'?",
+    "answers": ["Franz Kafka", "Albert Camus", "Jean-Paul Sartre", "Hermann Hesse"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who is the author of 'The Magic Mountain'?",
+    "answers": ["Thomas Mann", "Hermann Hesse", "Franz Kafka", "Albert Camus"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who wrote 'The Brothers Karamazov'?",
+    "answers": ["Fyodor Dostoevsky", "Leo Tolstoy", "Anton Chekhov", "Ivan Turgenev"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who is the author of 'Lolita'?",
+    "answers": ["Vladimir Nabokov", "Boris Pasternak", "Mikhail Bulgakov", "Ivan Bunin"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who wrote 'The Old Man and the Sea'?",
+    "answers": ["Ernest Hemingway", "F. Scott Fitzgerald", "John Steinbeck", "William Faulkner"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who is the author of 'East of Eden'?",
+    "answers": ["John Steinbeck", "Ernest Hemingway", "F. Scott Fitzgerald", "William Faulkner"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who wrote 'Brave New World'?",
+    "answers": ["Aldous Huxley", "George Orwell", "Ray Bradbury", "Philip K. Dick"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who is the author of 'Fahrenheit 451'?",
+    "answers": ["Ray Bradbury", "Aldous Huxley", "George Orwell", "Philip K. Dick"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who wrote 'Catch-22'?",
+    "answers": ["Joseph Heller", "Kurt Vonnegut", "J.D. Salinger", "John Irving"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+  {
+    "question": "Who is the author of 'Slaughterhouse-Five'?",
+    "answers": ["Kurt Vonnegut", "Joseph Heller", "J.D. Salinger", "John Irving"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 3
+  },
+
+  {
+    "question": "Who wrote 'Finnegans Wake'?",
+    "answers": ["James Joyce", "Samuel Beckett", "William Faulkner", "Virginia Woolf"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who is the author of 'Gravity's Rainbow'?",
+    "answers": ["Thomas Pynchon", "Don DeLillo", "David Foster Wallace", "William Gaddis"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who wrote 'Infinite Jest'?",
+    "answers": ["David Foster Wallace", "Thomas Pynchon", "Don DeLillo", "William Gaddis"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who is the author of 'The Recognitions'?",
+    "answers": ["William Gaddis", "Thomas Pynchon", "David Foster Wallace", "Don DeLillo"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who wrote 'Underworld'?",
+    "answers": ["Don DeLillo", "Thomas Pynchon", "David Foster Wallace", "William Gaddis"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who is the author of 'The Man Without Qualities'?",
+    "answers": ["Robert Musil", "Hermann Broch", "Thomas Mann", "Franz Kafka"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who wrote 'The Sleepwalkers'?",
+    "answers": ["Hermann Broch", "Robert Musil", "Thomas Mann", "Franz Kafka"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who is the author of 'The Book of Disquiet'?",
+    "answers": ["Fernando Pessoa", "José Saramago", "Gabriel García Márquez", "Jorge Luis Borges"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who wrote '2666'?",
+    "answers": ["Roberto Bolaño", "Gabriel García Márquez", "Mario Vargas Llosa", "Isabel Allende"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who is the author of 'The Tunnel'?",
+    "answers": ["Ernesto Sabato", "Julio Cortázar", "Jorge Luis Borges", "Mario Vargas Llosa"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who wrote 'The Golden Notebook'?",
+    "answers": ["Doris Lessing", "Margaret Atwood", "Virginia Woolf", "Toni Morrison"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who is the author of 'The Alexandria Quartet'?",
+    "answers": ["Lawrence Durrell", "Anthony Burgess", "Graham Greene", "Evelyn Waugh"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who wrote 'The Unbearable Lightness of Being'?",
+    "answers": ["Milan Kundera", "Václav Havel", "Bohumil Hrabal", "Ivan Klíma"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who is the author of 'If on a winter's night a traveler'?",
+    "answers": ["Italo Calvino", "Umberto Eco", "Primo Levi", "Alessandro Baricco"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who wrote 'The Master and Margarita'?",
+    "answers": ["Mikhail Bulgakov", "Vladimir Nabokov", "Boris Pasternak", "Ivan Bunin"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  },
+  {
+    "question": "Who is the author of 'Blindness'?",
+    "answers": ["José Saramago", "Gabriel García Márquez", "Mario Vargas Llosa", "Isabel Allende"],
+    "correctAnswer": 0,
+    "category": "Literature",
+    "difficulty": 4
+  }
+]

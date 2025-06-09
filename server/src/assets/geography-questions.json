@@ -1,0 +1,436 @@
+[
+  {
+    "question": "What is the capital city of France?",
+    "answers": ["Berlin", "Madrid", "Paris", "Rome"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which continent is Egypt located in?",
+    "answers": ["Asia", "Africa", "Europe", "Australia"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which ocean borders the east coast of the United States?",
+    "answers": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the largest country in the world by area?",
+    "answers": ["Canada", "China", "Russia", "United States"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which country is famous for the pyramids?",
+    "answers": ["Mexico", "Egypt", "Peru", "India"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the capital of Japan?",
+    "answers": ["Beijing", "Seoul", "Tokyo", "Bangkok"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which river runs through London?",
+    "answers": ["Seine", "Danube", "Thames", "Rhine"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Mount Everest is located in which mountain range?",
+    "answers": ["Andes", "Rockies", "Himalayas", "Alps"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which country has the most people?",
+    "answers": ["United States", "India", "China", "Brazil"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the smallest continent by land area?",
+    "answers": ["Europe", "Australia", "Antarctica", "South America"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which desert is the largest in the world?",
+    "answers": ["Sahara", "Gobi", "Kalahari", "Arabian"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "answers": ["China", "Japan", "Thailand", "Vietnam"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the longest river in the world?",
+    "answers": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which U.S. state is an island in the Pacific Ocean?",
+    "answers": ["Florida", "Alaska", "Hawaii", "California"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which country shares the longest border with the United States?",
+    "answers": ["Mexico", "Canada", "Russia", "Cuba"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Which African country has the most official languages?",
+    "answers": ["Nigeria", "South Africa", "Kenya", "Ethiopia"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the longest river in Europe?",
+    "answers": ["Danube", "Volga", "Rhine", "Seine"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which country has the most islands in the world?",
+    "answers": ["Indonesia", "Canada", "Sweden", "Philippines"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the capital of Kazakhstan?",
+    "answers": ["Astana", "Almaty", "Tashkent", "Bishkek"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which desert is the coldest in the world?",
+    "answers": ["Gobi", "Antarctic", "Patagonian", "Karakum"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which country is home to the world's highest waterfall, Angel Falls?",
+    "answers": ["Brazil", "Venezuela", "Peru", "Colombia"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the largest lake in Africa?",
+    "answers": ["Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Chad"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which European capital is located on two continents?",
+    "answers": ["Athens", "Istanbul", "Moscow", "Ankara"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the smallest country in South America by area?",
+    "answers": ["Suriname", "Guyana", "Uruguay", "Paraguay"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which mountain is the highest in North America?",
+    "answers": ["Mount Logan", "Mount Saint Elias", "Denali", "Pico de Orizaba"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which country does the river Mekong NOT flow through?",
+    "answers": ["Vietnam", "Cambodia", "Thailand", "Malaysia"],
+    "correctAnswer": 3,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the capital of New Zealand?",
+    "answers": ["Auckland", "Wellington", "Christchurch", "Hamilton"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which country is the largest producer of coffee in the world?",
+    "answers": ["Vietnam", "Colombia", "Brazil", "Ethiopia"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which sea separates Europe and Africa?",
+    "answers": ["Mediterranean Sea", "Black Sea", "Red Sea", "Baltic Sea"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which country has the longest coastline in the world?",
+    "answers": ["Australia", "Russia", "Canada", "United States"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 2
+  },
+  {
+    "question": "Which country is the only one to span both Europe and Asia and have its capital in Europe?",
+    "answers": ["Turkey", "Russia", "Kazakhstan", "Georgia"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "What is the deepest lake in the world?",
+    "answers": ["Lake Baikal", "Lake Tanganyika", "Caspian Sea", "Lake Superior"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which country has the most time zones (including overseas territories)?",
+    "answers": ["United States", "France", "Russia", "United Kingdom"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "What is the highest capital city in the world by elevation?",
+    "answers": ["La Paz", "Quito", "Kathmandu", "Thimphu"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which river is the longest in Asia?",
+    "answers": ["Yellow River", "Yangtze", "Mekong", "Ganges"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "What is the largest island in the Mediterranean Sea?",
+    "answers": ["Sicily", "Sardinia", "Cyprus", "Crete"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which country is the smallest in Africa by land area?",
+    "answers": ["Seychelles", "Gambia", "São Tomé and Príncipe", "Comoros"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which mountain range forms the traditional boundary between Europe and Asia?",
+    "answers": ["Alps", "Carpathians", "Ural Mountains", "Caucasus"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "What is the capital of Mongolia?",
+    "answers": ["Astana", "Ulaanbaatar", "Bishkek", "Tashkent"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which country is home to the Atacama Desert, the driest non-polar desert in the world?",
+    "answers": ["Peru", "Chile", "Argentina", "Bolivia"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which is the largest peninsula in the world?",
+    "answers": ["Iberian Peninsula", "Scandinavian Peninsula", "Arabian Peninsula", "Indian Peninsula"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "What is the southernmost capital city in the world?",
+    "answers": ["Wellington", "Canberra", "Buenos Aires", "Cape Town"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which country has the highest number of neighboring countries?",
+    "answers": ["China", "Russia", "Brazil", "Germany"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which river forms part of the border between the United States and Mexico?",
+    "answers": ["Colorado River", "Mississippi River", "Rio Grande", "Columbia River"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "What is the largest archipelago in the world by number of islands?",
+    "answers": ["Philippines", "Indonesia", "Finland", "Sweden"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which city is known as the 'Gateway to the Arctic'?",
+    "answers": ["Tromsø", "Murmansk", "Reykjavik", "Anchorage"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 3
+  },
+  {
+    "question": "Which country is home to the world's northernmost permanently inhabited place?",
+    "answers": ["Norway", "Canada", "Russia", "Greenland"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "What is the name of the trench that is the deepest part of the world's oceans?",
+    "answers": ["Tonga Trench", "Puerto Rico Trench", "Mariana Trench", "Java Trench"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which country has the most UNESCO World Heritage Sites?",
+    "answers": ["China", "Italy", "Spain", "France"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "What is the largest lake in South America?",
+    "answers": ["Lake Titicaca", "Lake Maracaibo", "Lake Poopó", "Lake Buenos Aires"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which desert covers much of Botswana and parts of Namibia and South Africa?",
+    "answers": ["Kalahari", "Namib", "Sahara", "Gobi"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "What is the capital of the Canadian province of Newfoundland and Labrador?",
+    "answers": ["Halifax", "St. John's", "Fredericton", "Charlottetown"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which river is the main waterway flowing through Baghdad?",
+    "answers": ["Euphrates", "Jordan", "Tigris", "Nile"],
+    "correctAnswer": 2,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which country is the only one in the world to be located on two continents and have no land borders?",
+    "answers": ["Cyprus", "Iceland", "Australia", "New Zealand"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "What is the highest waterfall in Africa?",
+    "answers": ["Tugela Falls", "Victoria Falls", "Kalambo Falls", "Blue Nile Falls"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which country is the largest landlocked country in the world?",
+    "answers": ["Kazakhstan", "Mongolia", "Chad", "Bolivia"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "What is the name of the sea between Australia and New Zealand?",
+    "answers": ["Coral Sea", "Tasman Sea", "Arafura Sea", "Timor Sea"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which city is the southernmost city in the world with a population over 100,000?",
+    "answers": ["Punta Arenas", "Ushuaia", "Christchurch", "Puerto Montt"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which country is home to the Carpathian Mountains?",
+    "answers": ["Poland", "Romania", "Ukraine", "Slovakia"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "What is the largest island in the Caribbean?",
+    "answers": ["Jamaica", "Cuba", "Hispaniola", "Puerto Rico"],
+    "correctAnswer": 1,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which river flows through the Grand Canyon?",
+    "answers": ["Colorado River", "Missouri River", "Rio Grande", "Snake River"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 4
+  },
+  {
+    "question": "Which country is the only one to border both the Caspian Sea and the Persian Gulf?",
+    "answers": ["Iran", "Iraq", "Turkmenistan", "Azerbaijan"],
+    "correctAnswer": 0,
+    "category": "Geography",
+    "difficulty": 4
+  }
+]

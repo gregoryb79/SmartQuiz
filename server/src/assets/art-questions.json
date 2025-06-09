@@ -1,0 +1,432 @@
+[
+  {
+    "question": "Who painted the Mona Lisa?",
+    "answers": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+    "correctAnswer": 2,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the primary color that is NOT in the American flag?",
+    "answers": ["Red", "Blue", "Yellow", "White"],
+    "correctAnswer": 2,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "Which artist is famous for cutting off part of his own ear?",
+    "answers": ["Claude Monet", "Vincent van Gogh", "Pablo Picasso", "Salvador Dalí"],
+    "correctAnswer": 1,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the art of folding paper into shapes called?",
+    "answers": ["Origami", "Papier-mâché", "Collage", "Mosaic"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "Which artist painted 'Starry Night'?",
+    "answers": ["Vincent van Gogh", "Claude Monet", "Edvard Munch", "Paul Cézanne"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "What do you call a painting of a person?",
+    "answers": ["Landscape", "Portrait", "Still life", "Abstract"],
+    "correctAnswer": 1,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "Which artist is known for painting water lilies?",
+    "answers": ["Claude Monet", "Edgar Degas", "Henri Matisse", "Paul Gauguin"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the main ingredient in a sculpture made of marble?",
+    "answers": ["Clay", "Stone", "Metal", "Wood"],
+    "correctAnswer": 1,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "Which artist is famous for his blue period?",
+    "answers": ["Pablo Picasso", "Henri Matisse", "Paul Cézanne", "Salvador Dalí"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the name for a painting done on wet plaster?",
+    "answers": ["Fresco", "Mosaic", "Collage", "Etching"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "Which artist painted 'The Persistence of Memory'?",
+    "answers": ["Salvador Dalí", "Joan Miró", "Pablo Picasso", "Georges Braque"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the term for a drawing made with a pencil?",
+    "answers": ["Sketch", "Mural", "Fresco", "Mosaic"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "Which artist is known for painting ballerinas?",
+    "answers": ["Edgar Degas", "Claude Monet", "Paul Cézanne", "Henri Rousseau"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "What is the name for a painting of objects like fruit or flowers?",
+    "answers": ["Portrait", "Landscape", "Still life", "Abstract"],
+    "correctAnswer": 2,
+    "category": "Art",
+    "difficulty": 1
+  },
+  {
+    "question": "Which artist painted 'The Scream'?",
+    "answers": ["Edvard Munch", "Vincent van Gogh", "Claude Monet", "Paul Gauguin"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 1
+  },
+
+  {
+    "question": "Who sculpted 'David'?",
+    "answers": ["Donatello", "Michelangelo", "Bernini", "Rodin"],
+    "correctAnswer": 1,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Which artist is known for the painting 'Guernica'?",
+    "answers": ["Pablo Picasso", "Salvador Dalí", "Joan Miró", "Francisco Goya"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the name of the famous glass pyramid at the Louvre?",
+    "answers": ["The Crystal Palace", "The Louvre Pyramid", "The Glass House", "The Paris Prism"],
+    "correctAnswer": 1,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Which artist is associated with the Surrealist movement?",
+    "answers": ["Salvador Dalí", "Claude Monet", "Edgar Degas", "Paul Cézanne"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Who painted 'Girl with a Pearl Earring'?",
+    "answers": ["Johannes Vermeer", "Rembrandt", "Jan van Eyck", "Hieronymus Bosch"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Which artist is known for the ceiling of the Sistine Chapel?",
+    "answers": ["Raphael", "Michelangelo", "Leonardo da Vinci", "Donatello"],
+    "correctAnswer": 1,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the main color in Picasso's 'Blue Period'?",
+    "answers": ["Red", "Blue", "Green", "Yellow"],
+    "correctAnswer": 1,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Who painted 'The Birth of Venus'?",
+    "answers": ["Sandro Botticelli", "Leonardo da Vinci", "Raphael", "Michelangelo"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Which artist is known for the painting 'American Gothic'?",
+    "answers": ["Grant Wood", "Edward Hopper", "Georgia O'Keeffe", "Norman Rockwell"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Who painted 'The Night Watch'?",
+    "answers": ["Rembrandt", "Vermeer", "Rubens", "Frans Hals"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Which artist is famous for his Campbell's Soup Cans?",
+    "answers": ["Andy Warhol", "Roy Lichtenstein", "Jasper Johns", "Keith Haring"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Who painted 'The Kiss'?",
+    "answers": ["Gustav Klimt", "Egon Schiele", "Edvard Munch", "Paul Klee"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Which artist is known for his mobiles?",
+    "answers": ["Alexander Calder", "Henry Moore", "Barbara Hepworth", "Jean Arp"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Who painted 'Impression, Sunrise'?",
+    "answers": ["Claude Monet", "Edgar Degas", "Pierre-Auguste Renoir", "Camille Pissarro"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+  {
+    "question": "Which artist is known for the painting 'The Garden of Earthly Delights'?",
+    "answers": ["Hieronymus Bosch", "Pieter Bruegel", "Jan van Eyck", "Albrecht Dürer"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 2
+  },
+
+  {
+    "question": "Who painted 'The School of Athens'?",
+    "answers": ["Raphael", "Michelangelo", "Leonardo da Vinci", "Caravaggio"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Which artist is known for the painting 'Las Meninas'?",
+    "answers": ["Diego Velázquez", "Francisco Goya", "El Greco", "Bartolomé Murillo"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Who sculpted 'The Thinker'?",
+    "answers": ["Auguste Rodin", "Donatello", "Michelangelo", "Gian Lorenzo Bernini"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Which artist is known for the painting 'The Arnolfini Portrait'?",
+    "answers": ["Jan van Eyck", "Hans Holbein", "Albrecht Dürer", "Pieter Bruegel"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Who painted 'The Creation of Adam'?",
+    "answers": ["Michelangelo", "Raphael", "Leonardo da Vinci", "Caravaggio"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Which artist is known for the painting 'The Hay Wain'?",
+    "answers": ["John Constable", "J.M.W. Turner", "Thomas Gainsborough", "Joshua Reynolds"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Who painted 'The Raft of the Medusa'?",
+    "answers": ["Théodore Géricault", "Eugène Delacroix", "Jean-Auguste-Dominique Ingres", "Jacques-Louis David"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Which artist is known for the painting 'The Great Wave off Kanagawa'?",
+    "answers": ["Katsushika Hokusai", "Utagawa Hiroshige", "Kitagawa Utamaro", "Tawaraya Sōtatsu"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Who painted 'The Birth of Venus'?",
+    "answers": ["Sandro Botticelli", "Leonardo da Vinci", "Raphael", "Michelangelo"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Which artist is known for the painting 'Liberty Leading the People'?",
+    "answers": ["Eugène Delacroix", "Jacques-Louis David", "Jean-Auguste-Dominique Ingres", "Théodore Géricault"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Who painted 'The Last Supper'?",
+    "answers": ["Leonardo da Vinci", "Raphael", "Michelangelo", "Caravaggio"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Which artist is known for the painting 'The Peasant Wedding'?",
+    "answers": ["Pieter Bruegel the Elder", "Jan van Eyck", "Hieronymus Bosch", "Hans Holbein"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Who painted 'The Oath of the Horatii'?",
+    "answers": ["Jacques-Louis David", "Jean-Auguste-Dominique Ingres", "Eugène Delacroix", "Théodore Géricault"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Which artist is known for the painting 'Ophelia'?",
+    "answers": ["John Everett Millais", "Dante Gabriel Rossetti", "William Holman Hunt", "Ford Madox Brown"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+  {
+    "question": "Who painted 'The Sleeping Gypsy'?",
+    "answers": ["Henri Rousseau", "Paul Gauguin", "Georges Seurat", "Paul Cézanne"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 3
+  },
+
+  {
+    "question": "Who painted 'Composition VII'?",
+    "answers": ["Wassily Kandinsky", "Kazimir Malevich", "Piet Mondrian", "Paul Klee"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Which artist is known for the painting 'Broadway Boogie Woogie'?",
+    "answers": ["Piet Mondrian", "Wassily Kandinsky", "Kazimir Malevich", "Paul Klee"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Who sculpted 'Bird in Space'?",
+    "answers": ["Constantin Brâncuși", "Henry Moore", "Barbara Hepworth", "Jean Arp"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Which artist is known for the painting 'No. 5, 1948'?",
+    "answers": ["Jackson Pollock", "Mark Rothko", "Willem de Kooning", "Franz Kline"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Who painted 'The Treachery of Images'?",
+    "answers": ["René Magritte", "Salvador Dalí", "Joan Miró", "Giorgio de Chirico"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Which artist is known for the painting 'Woman I'?",
+    "answers": ["Willem de Kooning", "Jackson Pollock", "Mark Rothko", "Franz Kline"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Who painted 'The Persistence of Memory'?",
+    "answers": ["Salvador Dalí", "Joan Miró", "Pablo Picasso", "Georges Braque"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Which artist is known for the painting 'Blue Nude'?",
+    "answers": ["Henri Matisse", "Pablo Picasso", "Georges Braque", "Fernand Léger"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Who painted 'The Two Fridas'?",
+    "answers": ["Frida Kahlo", "Diego Rivera", "David Alfaro Siqueiros", "Rufino Tamayo"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Which artist is known for the painting 'Campbell's Soup Cans'?",
+    "answers": ["Andy Warhol", "Roy Lichtenstein", "Jasper Johns", "Keith Haring"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Who painted 'Number 61 (Rust and Blue)'?",
+    "answers": ["Mark Rothko", "Jackson Pollock", "Willem de Kooning", "Barnett Newman"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Which artist is known for the painting 'The Lovers'?",
+    "answers": ["René Magritte", "Salvador Dalí", "Joan Miró", "Giorgio de Chirico"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Who painted 'Broadway Boogie Woogie'?",
+    "answers": ["Piet Mondrian", "Wassily Kandinsky", "Kazimir Malevich", "Paul Klee"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Which artist is known for the painting 'Composition with Red, Blue and Yellow'?",
+    "answers": ["Piet Mondrian", "Wassily Kandinsky", "Kazimir Malevich", "Paul Klee"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Who painted 'The False Mirror'?",
+    "answers": ["René Magritte", "Salvador Dalí", "Joan Miró", "Giorgio de Chirico"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  },
+  {
+    "question": "Which artist is known for the painting 'Victory Boogie Woogie'?",
+    "answers": ["Piet Mondrian", "Wassily Kandinsky", "Kazimir Malevich", "Paul Klee"],
+    "correctAnswer": 0,
+    "category": "Art",
+    "difficulty": 4
+  }
+]

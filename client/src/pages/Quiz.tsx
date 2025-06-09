@@ -2,10 +2,11 @@ import { useLocation, useNavigate, useBlocker } from "react-router";
 import styles from "./Quiz.module.scss";
 import { QuizButton } from "./components/QuizButton";
 import { GeneralButton } from "./components/GeneralButton";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { Confirm } from "./components/Confirm";
 import { useQuestion } from "../hooks/useQuestion";
 import { Summary } from "./components/Summary";
+import { resetUsedQuestions } from "../models/questions";
 
 
 const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY) || 10;
@@ -37,6 +38,7 @@ export function Quiz() {
     const [showConfirm, setShowConfirm] = useState<boolean>(false);
     const [buttonState, setButtonState] = useState<("default" | "correct" | "wrong")[]>(["default", "default", "default", "default"]);
     const [showSummary, setShowSummary] = useState<boolean>(false);
+    const [startQuiz, setStartQuiz] = useState<boolean>(true);
 
     const {question,error} = useQuestion(category, difficulty, streak, currentStep, totalSteps);
 
@@ -48,6 +50,11 @@ export function Quiz() {
             setTimerActive(true);
         }
     }, [question]);
+
+    useEffect(() => {
+        console.log("Resetting used questions");
+        resetUsedQuestions();
+    }, [startQuiz]);
 
     useEffect(() => {
         if (!timerActive) return;        
@@ -157,7 +164,9 @@ export function Quiz() {
                 onYes = {() => {
                             blockNavigation = false;
                             navigate("/");
-                            setShowConfirm(false);}
+                            setShowConfirm(false);
+                            setStartQuiz(false);
+                        }
                 }
                 onNo = {() => setShowConfirm(false)}
                 />)}  
@@ -167,6 +176,7 @@ export function Quiz() {
                     onOk = {() => {
                                     blockNavigation = false;
                                     navigate("/leaderboard");
+                                    setStartQuiz(false);
                                     setShowSummary(false);
                                 }} 
                 />}
