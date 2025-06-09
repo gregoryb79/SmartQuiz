@@ -1,0 +1,13 @@
+@use '../styles/mixins' as *;
+
+.profileContainer{
+    @include pageFrame;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    > *:nth-child(n+3) {
+     margin-top: 2rem; 
+    }   
+    
+}

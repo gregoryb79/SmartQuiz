@@ -13,6 +13,7 @@ import { getUserName } from "./models/users";
 // import { HandleOrder } from "./pages/HandleOrder";
 import { LogIn } from "./pages/LogIn";
 import { Register } from "./pages/Register";
+import { Profile } from "./pages/Profile";
 
 
 
@@ -51,6 +52,13 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 Component: Register,
+                loader: () => {
+                    return getUserName();
+                },
+            },
+            {
+                path: "/profile",
+                Component: Profile,
                 loader: () => {
                     return getUserName();
                 },
