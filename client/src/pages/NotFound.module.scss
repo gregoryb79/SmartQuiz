@@ -1,0 +1,16 @@
+@use '../styles/mixins' as *;
+
+.notfoundContainer{
+    @include pageFrame;   
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    p{
+        font-size: var(--font-xl); 
+        text-align: center; 
+    }    
+    padding: 2rem;
+    
+}

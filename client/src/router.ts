@@ -7,7 +7,7 @@ import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Quiz } from "./pages/Quiz";
 import { Leaderboard } from "./pages/Leaderboard";
-import { getUsersScores } from "./models/users";
+import { getUserProfile, getUsersScores } from "./models/users";
 // import { getQuizCategories } from "./models/questions";
 import { getUserName } from "./models/users";
 // import { HandleOrder } from "./pages/HandleOrder";
@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
                 path: "/profile",
                 Component: Profile,
                 loader: () => {
-                    return getUserName();
+                    return getUserProfile();
                 },
             },
         ],

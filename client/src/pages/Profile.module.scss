@@ -1,13 +1,36 @@
 @use '../styles/mixins' as *;
 
 .profileContainer{
-    @include pageFrame;
-    
+    @include pageFrame;   
+   
     display: flex;
     flex-direction: column;
-    gap: 0;
-    > *:nth-child(n+3) {
-     margin-top: 2rem; 
-    }   
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
     
 }
+
+.profileDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 90%;   
+    font-size: var(--font-xl);
+    background-color: var(--white-bg);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include shadowBorder; 
+
+    p{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;       
+    }
+       
+}
+
+

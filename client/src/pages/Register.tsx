@@ -1,11 +1,13 @@
 import { GeneralButton } from './components/GeneralButton';
 import styles from './Register.module.scss';
-import favicon from "../assets/favicon.png";
+
 import { useLoaderData, useNavigate, useRevalidator } from 'react-router';
 import { useDoRegister } from '../hooks/useLogIn';
 import { Spinner } from './components/Spinner';
 import { useEffect, useState } from 'react';
 import { ErrorMsg } from './components/ErrorMsg';
+
+import { AppIcon } from './components/AppIcon';
 
 
 export function Register() {   
@@ -71,7 +73,7 @@ export function Register() {
                             
             </form>
 
-            <img className={styles.appIcon} src={favicon} alt="application icon" />
+           <AppIcon />
             {showError && error && <ErrorMsg message={error} onOk={() => {setShowError(false)}} />}
             
         </main>

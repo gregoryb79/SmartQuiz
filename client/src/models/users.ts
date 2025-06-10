@@ -1,4 +1,4 @@
-import { apiClient, clearToken, setToken } from "./apiClient";
+import { apiClient, clearToken, getToken, setToken } from "./apiClient";
 
 export type User = {
     _id: string;
@@ -9,7 +9,7 @@ export type User = {
     totalGames: number;
     lastScore: number;
     createdAt: string;
-    updatedAt: string;
+    updatedAt: string;    
 };
 
 export function getUserName(): string | null {
@@ -64,7 +64,8 @@ export async function postRegister(email: string, username: string, password: st
 }
 
 export async function getUserProfile(): Promise<User> {
-    const token = localStorage.getItem("token");
+    console.log("Fetching user profile...");
+    const token = getToken();
     if (!token) {
         throw new Error("User is not logged in. Please log in to access your profile.");
     }
@@ -75,7 +76,7 @@ export async function getUserProfile(): Promise<User> {
 
     try {
         const res = await apiClient.get(`/users/${userId}`);
-        return res.data;
+        return res.data as User;
     } catch (error) {
         console.error("Error fetching user profile:", error);
         throw new Error("Failed to fetch user profile. Please try again later.");

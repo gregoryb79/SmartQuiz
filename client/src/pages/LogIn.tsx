@@ -6,6 +6,7 @@ import { useDoLogIn } from '../hooks/useLogIn';
 import { Spinner } from './components/Spinner';
 import { ErrorMsg } from './components/ErrorMsg';
 import { useEffect, useState } from 'react';
+import { AppIcon } from './components/AppIcon';
 
 
 export function LogIn() { 
@@ -61,7 +62,7 @@ export function LogIn() {
                             
             </form>
 
-            <img className={styles.appIcon} src={favicon} alt="application icon" />
+            <AppIcon/>
             {showError && error && <ErrorMsg message={error} onOk={() => {setShowError(false)}} />}
             
         </main>

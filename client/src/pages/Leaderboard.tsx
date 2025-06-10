@@ -1,4 +1,3 @@
-import { use } from 'react';
 import styles from './Leaderboard.module.scss';
 import { useLoaderData } from 'react-router';
 import { type UserScore } from '../models/users';

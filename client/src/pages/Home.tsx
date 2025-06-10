@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from "react";
-import { useLoaderData, useLocation, useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+import { useLoaderData, useNavigate } from "react-router";
 import { GeneralButton } from "./components/GeneralButton";
 import styles from "./Home.module.scss";
-import favicon from "../assets/favicon.png";
 import { Spinner } from "./components/Spinner";
 import { Confirm } from "./components/Confirm";
 import { useCategories } from "../hooks/useCategories";
 import { ErrorMsg } from './components/ErrorMsg';
+import { AppIcon } from "./components/AppIcon";
 
 export function Home() {
     const username = useLoaderData<string>();
@@ -60,7 +60,7 @@ export function Home() {
                 </select> 
             </section>          
         </form>
-        <img className={styles.appIcon} src={favicon} alt="application icon" />
+        <AppIcon />
 
         {showConfirm && (<Confirm question={"You are not Logged In. No scores will be saved. Do you want to continue?"} 
                         onYes = {() => {                                    

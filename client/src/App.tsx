@@ -41,7 +41,7 @@ function Nav() {
       
       <menu className={styles.navMenu}>
         <li>
-          <NavButton title="Profile" icon={<User className={styles.lucideIcon} color="var(--primary-blue)" />} ariaLabel="Navigate to Profile Page" onClick={() => {
+          <NavButton disabled={!username} title="Profile" icon={<User className={styles.lucideIcon} color={!username ? "var(--disabled-gray)":"var(--primary-blue)"} />} ariaLabel="Navigate to Profile Page" onClick={() => {
             setLoading(true);
             navigate("/profile");}}/>
         </li>
