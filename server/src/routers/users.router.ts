@@ -169,6 +169,7 @@ router.put("/score",auth(), async (req, res) => {
 
     try {
         const user = await User.findById(userId);
+        console.log("Found user:", user);
         if (!user) {
             res.status(404).json({ message: "User not found" });
             return;
