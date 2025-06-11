@@ -35,8 +35,7 @@ router.post("/", async (req, res) => {
     }
     console.log(`Filter for question: difficulty=${filter.difficulty}, category=${filter.category ? filter.category : "General"}, streak=${streak}, usedQuestions=${usedQuestions ? usedQuestions.length : 0}`);
     
-    try {
-        // console.log("looking for question with filter:", filter);
+    try {        
         const [question] = await Question.aggregate([
             { $match: filter },
             { $sample: { size: 1 } }
