@@ -1,6 +1,7 @@
 import express from 'express';
 export const router = express.Router();
 import { Question } from '../models/question';
+import { Types } from "mongoose";
 
 router.get("/", async (req, res) => {
     console.log("Received GET request for categories");
@@ -24,8 +25,8 @@ router.post("/", async (req, res) => {
     console.log("Query params:", { category, difficulty, streak, usedQuestions });
     const filter = {
         category: category,
-        difficulty: difficulty,        
-        _id: { $nin: usedQuestions ? usedQuestions : [] }
+        difficulty: difficulty,
+        _id: { $nin: (usedQuestions || []).map((id:string) => new Types.ObjectId(id)) }
     };
     if (category === "General") {        
         delete filter.category; 
