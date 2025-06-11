@@ -25,8 +25,7 @@ export const router = createBrowserRouter([
             return getUserName();
         },
         children: [
-            // { index: true, loader: () => redirect("/orders-history") },
-            { path: "*", Component: NotFound },   
+            // { index: true, loader: () => redirect("/orders-history") },              
             { 
                 path: "/", 
                 Component: Home,
@@ -67,6 +66,7 @@ export const router = createBrowserRouter([
                     return getUserProfile();
                 },
             },
+            { path: "*", Component: NotFound }, 
         ],
     },
 ]);
