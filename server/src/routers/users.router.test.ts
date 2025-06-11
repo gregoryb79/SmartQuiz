@@ -91,7 +91,7 @@ describe("Users Router", () => {
       console.log("should return peer users if user is not in top 10");
       const res = await request(app).get("/users/scores/15");
       expect(res.status).toBe(200);
-      expect(res.body[9].rank).toBeGreaterThanOrEqual(9);
+      expect(res.body[9].rank).toBeGreaterThanOrEqual(11);
     });
   });
 
