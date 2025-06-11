@@ -95,6 +95,12 @@ router.post("/register", async (req, res) => {
         return;
     }
 
+    if (password.length < 8 || !/\d/.test(password) || !/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+            console.log("Password doesn't fit the rules");
+            res.status(400).json({ message: "Password doesn't fit the rules" });
+        return;
+    }
+
     try{
         const existingUser = await User.findOne({ email });
 

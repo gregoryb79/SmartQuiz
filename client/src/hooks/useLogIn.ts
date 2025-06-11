@@ -57,9 +57,16 @@ export function useDoRegister(onSuccess: () => void) {
             setError(undefined);
             setLoading(true);
 
+            if (password.length < 8 || !/\d/.test(password) || !/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+                console.log("Password doesn't fit the rules");
+                setError("Password doesn't fit the rules!");
+                setLoading(false);
+                return;
+            }
+
             if (password !== repeatPassword) {
                 console.log("Passwords do not match");
-                setError("Passwords do not match");
+                setError("Passwords do not match!");
                 setLoading(false);
                 return;
             }

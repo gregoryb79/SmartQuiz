@@ -56,9 +56,9 @@ export async function putLogIn(email: string, password: string): Promise<boolean
 
 export async function postRegister(email: string, username: string, password: string): Promise<boolean> {
 
-     if (!email || !username || !password) {
+    if (!email || !username || !password) {
             throw new Error("Email, username, and password are required");
-        }
+    }    
 
     try {
         const res = await apiClient.post("/users/register", { email, username, password });
