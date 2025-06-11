@@ -120,9 +120,11 @@ export function Quiz() {
     }   
 
     const [blockNavigation, setBlockNavigation] = useState<boolean>(true);
-    const [pendingNavigation, setPendingNavigation] = useState(false);  
+    const [pendingNavigation, setPendingNavigation] = useState(false);
+    const [nextLocation, setNextLocation] = useState<string>("/");  
     useBlocker((tx) => {
         console.log("Entered useBlocker", tx);
+        setNextLocation(tx.nextLocation.pathname);
         if (blockNavigation){
             console.log("Blocking navigation");
             setShowConfirm(true);                    
@@ -131,12 +133,11 @@ export function Quiz() {
         return false;              
     });
     useEffect(() => {
-    if (!blockNavigation && pendingNavigation) {
-        if (showSummary) navigate("/leaderboard");
-            else navigate("/");
-        setStartQuiz(false);
-        setShowSummary(false);
-        setPendingNavigation(false);
+        if (!blockNavigation && pendingNavigation) {            
+            navigate(nextLocation);                     
+            setStartQuiz(false);
+            setShowSummary(false);
+            setPendingNavigation(false);
     }}, [blockNavigation, pendingNavigation, navigate]);
 
     const [score, setScore] = useState<number>(0);
