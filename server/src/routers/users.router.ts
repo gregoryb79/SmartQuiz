@@ -21,20 +21,26 @@ function hashPasswordWithSalt(password: string, salt: string) {
 
 router.get("/scores/:userId", async (req, res) => {
     console.log("Getting users and their scores");
-    const { userId } = req.params;
+    let { userId } = req.params;
+    if (!userId || userId === "null") {
+        userId = "";
+    }
+    console.log("User ID for leaderboard:", userId);
 
     try {
         const users = await User.find({}, { username: 1, totalScore: 1})
-                            .sort({ totalScore: -1 }).limit(10);
-        console.log(`Found top ${users.length} users for the leaderboard`);
+                            .sort({ totalScore: -1 }).limit(10);        
         users.forEach((user, index) => {user.rank = index + 1});
+        console.log(`Found top ${users.length} users for the leaderboard`);
         if (!users || users.length === 0) {
             res.status(404).json({ message: "No users found" });
             return;
         }
         if (!userId || users.some(user => user._id.toString() === userId)) {
+            console.log("User ID is not provided or user is in the top 10, returning all users");
             res.status(200).json(users);
         } else {
+            console.log("User ID provided and user is in not in the top 10, fetching peer users");
             const allUsers = await User.find({}, { username: 1, totalScore: 1 }).sort({ totalScore: -1 });
             const index = allUsers.findIndex(user => user._id.toString() === userId);
             if (index === -1) {
