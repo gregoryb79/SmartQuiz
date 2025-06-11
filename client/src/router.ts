@@ -34,7 +34,11 @@ export const router = createBrowserRouter([
                     return getUserName();
                 }
             },         
-            { path: "/new-quiz", Component: Quiz },
+            { path: "/new-quiz", Component: Quiz,
+                loader: () => {
+                    return getUserName();
+                }
+             },
             { 
                 path: "/leaderboard", 
                 Component: Leaderboard, 

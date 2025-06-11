@@ -9,7 +9,8 @@ export type User = {
     totalGames: number;
     lastScore: number;
     createdAt: string;
-    updatedAt: string;    
+    updatedAt: string; 
+    rank?:number;  
 };
 
 export function getUserName(): string | null {
@@ -23,6 +24,16 @@ export function getUserName(): string | null {
 export function doLogOut() {
     localStorage.removeItem("user"); 
     clearToken();   
+}
+
+export function getUserId(): string | null {
+    const token = getToken();
+    if (!token) {
+        return null;
+    }
+    const payload = token.split('.')[1];
+    const decoded = JSON.parse(atob(payload));
+    return decoded.sub;
 }
 
 export async function putLogIn(email: string, password: string): Promise<boolean> {
@@ -64,15 +75,12 @@ export async function postRegister(email: string, username: string, password: st
 }
 
 export async function getUserProfile(): Promise<User> {
-    console.log("Fetching user profile...");
-    const token = getToken();
-    if (!token) {
-        throw new Error("User is not logged in. Please log in to access your profile.");
+    console.log("Fetching user profile...");   
+    
+    const userId =  getUserId();
+    if (!userId) {
+        throw new Error("User ID not found. Please log in again.");
     }
-
-    const payload = token.split('.')[1];
-    const decoded = JSON.parse(atob(payload));
-    const userId =  decoded.sub;
 
     try {
         const res = await apiClient.get(`/users/${userId}`);
@@ -85,11 +93,33 @@ export async function getUserProfile(): Promise<User> {
 
 export type UserScore = Omit<User,"email" | "createdAt" | "updatedAt" | "lastScore" | "totalGames" | "topScore">;
 export async function getUsersScores(): Promise<UserScore[]> {
+    const userId = getUserId();
     try {
-        const res = await apiClient.get("/users");
-        return res.data as UserScore[];        
+        const res = await apiClient.get(`/users/scores/${userId}`);
+        const scores = res.data as UserScore[];
+        if (!scores || scores.length === 0) {
+            console.warn("No users found for the leaderboard.");
+            return [];
+        }
+        console.log("Leaderboard results: ",scores);
+        return scores;        
     } catch (error) {
         console.error("Error fetching users:", error);
         throw new Error("Failed to fetch users. Please try again later.");
+    }
+}
+
+export async function updateUserScore(score:number): Promise<void> {
+    
+    const userId = getUserId();
+    if (!userId) {
+        throw new Error("User ID not found. Please log in again.");
+    }
+
+    try {
+        await apiClient.put(`/users/score`,{userId, score});
+    } catch (error) {
+        console.error("Error updating user score:", error);
+        throw new Error("Failed to update user score. Please try again later.");
     }
 }

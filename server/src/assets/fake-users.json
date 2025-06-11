@@ -1,0 +1,202 @@
+[
+  {
+    "username": "fakeUser01",
+    "email": "fu01@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1234,
+    "topScore": 234,
+    "totalGames": 12,
+    "lastScore": 45,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser02",
+    "email": "fu02@mail",
+    "passwordHash": "testhash",
+    "totalScore": 876,
+    "topScore": 120,
+    "totalGames": 8,
+    "lastScore": 67,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser03",
+    "email": "fu03@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1500,
+    "topScore": 300,
+    "totalGames": 15,
+    "lastScore": 100,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser04",
+    "email": "fu04@mail",
+    "passwordHash": "testhash",
+    "totalScore": 432,
+    "topScore": 90,
+    "totalGames": 5,
+    "lastScore": 32,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser05",
+    "email": "fu05@mail",
+    "passwordHash": "testhash",
+    "totalScore": 2100,
+    "topScore": 400,
+    "totalGames": 20,
+    "lastScore": 200,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser06",
+    "email": "fu06@mail",
+    "passwordHash": "testhash",
+    "totalScore": 999,
+    "topScore": 199,
+    "totalGames": 10,
+    "lastScore": 99,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser07",
+    "email": "fu07@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1345,
+    "topScore": 245,
+    "totalGames": 13,
+    "lastScore": 45,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser08",
+    "email": "fu08@mail",
+    "passwordHash": "testhash",
+    "totalScore": 765,
+    "topScore": 150,
+    "totalGames": 7,
+    "lastScore": 65,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser09",
+    "email": "fu09@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1800,
+    "topScore": 350,
+    "totalGames": 18,
+    "lastScore": 180,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser10",
+    "email": "fu10@mail",
+    "passwordHash": "testhash",
+    "totalScore": 543,
+    "topScore": 110,
+    "totalGames": 6,
+    "lastScore": 43,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser11",
+    "email": "fu11@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1200,
+    "topScore": 220,
+    "totalGames": 12,
+    "lastScore": 60,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser12",
+    "email": "fu12@mail",
+    "passwordHash": "testhash",
+    "totalScore": 980,
+    "topScore": 180,
+    "totalGames": 9,
+    "lastScore": 80,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser13",
+    "email": "fu13@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1600,
+    "topScore": 320,
+    "totalGames": 16,
+    "lastScore": 120,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser14",
+    "email": "fu14@mail",
+    "passwordHash": "testhash",
+    "totalScore": 700,
+    "topScore": 140,
+    "totalGames": 7,
+    "lastScore": 70,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser15",
+    "email": "fu15@mail",
+    "passwordHash": "testhash",
+    "totalScore": 2000,
+    "topScore": 400,
+    "totalGames": 20,
+    "lastScore": 200,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser16",
+    "email": "fu16@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1100,
+    "topScore": 210,
+    "totalGames": 11,
+    "lastScore": 100,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser17",
+    "email": "fu17@mail",
+    "passwordHash": "testhash",
+    "totalScore": 890,
+    "topScore": 170,
+    "totalGames": 8,
+    "lastScore": 90,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser18",
+    "email": "fu18@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1750,
+    "topScore": 350,
+    "totalGames": 17,
+    "lastScore": 150,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser19",
+    "email": "fu19@mail",
+    "passwordHash": "testhash",
+    "totalScore": 600,
+    "topScore": 120,
+    "totalGames": 6,
+    "lastScore": 60,
+    "rank": -1
+  },
+  {
+    "username": "fakeUser20",
+    "email": "fu20@mail",
+    "passwordHash": "testhash",
+    "totalScore": 1400,
+    "topScore": 280,
+    "totalGames": 14,
+    "lastScore": 100,
+    "rank": -1
+  }
+]

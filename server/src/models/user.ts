@@ -31,7 +31,11 @@ const userSchema = new Schema({
     lastScore: {
         type: Number,
         default: 0,
-    },    
+    },   
+    rank: {
+        type: Number,
+        default: -1,
+    } 
 }, { timestamps: true });
 
 export const User = model("User",userSchema);

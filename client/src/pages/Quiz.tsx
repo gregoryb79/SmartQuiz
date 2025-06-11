@@ -1,13 +1,15 @@
-import { useLocation, useNavigate, useBlocker } from "react-router";
+import { useLocation, useNavigate, useBlocker, useLoaderData } from "react-router";
 import styles from "./Quiz.module.scss";
 import { QuizButton } from "./components/QuizButton";
 import { GeneralButton } from "./components/GeneralButton";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Confirm } from "./components/Confirm";
 import { useQuestion } from "../hooks/useQuestion";
 import { Summary } from "./components/Summary";
 import { resetUsedQuestions } from "../models/questions";
 import { ErrorMsg } from './components/ErrorMsg';
+import { updateUserScore } from "../models/users";
+import { Spinner } from "./components/Spinner";
 
 
 const timerValueEasy = Number(import.meta.env.VITE_QUIZ_TIME_EASY) || 10;
@@ -33,23 +35,25 @@ export function Quiz() {
     const [totalTime, setTotalTime] = useState<number>(0); // in seconds
     const [timerActive, setTimerActive] = useState(false);
     const [currentStep, setCurrentStep] = useState<number>(1);
-    // const [qCounter, setQCounter] = useState<number>(0); 
+    const [loading, setLoading] = useState<boolean>(false);
     const [correctAnswers, setCorrectAnswer] = useState<number>(0); 
     const [streak, setStreak] = useState<number>(0); 
     const [showConfirm, setShowConfirm] = useState<boolean>(false);
     const [buttonState, setButtonState] = useState<("default" | "correct" | "wrong")[]>(["default", "default", "default", "default"]);
     const [showSummary, setShowSummary] = useState<boolean>(false);
     const [startQuiz, setStartQuiz] = useState<boolean>(true);
+    const [error, setError] = useState<string>("");
 
-    const {question,error} = useQuestion(category, Number(difficulty), streak, currentStep, totalSteps);
+    const {question, error: questionError} = useQuestion(category, Number(difficulty), streak, currentStep, totalSteps);
     
     const [showError, setShowError] = useState(false);
     useEffect(() => {
-        if (error) {
-            console.error("Error getting question:", error);
+        if (questionError) {
+            console.error("Error getting question:", questionError);
+            setError(questionError);
             setShowError(true);
         }
-    }, [error]);
+    }, [questionError]);
 
     // console.log(`Current step: ${currentStep}, Total steps: ${totalSteps}, total time: ${totalTime}, streak: ${streak}`);
     
@@ -115,7 +119,8 @@ export function Quiz() {
         console.log(`Submitting answer: ${answer}, current streak: ${streak}`);         
     }   
 
-    let blockNavigation = true;    
+    const [blockNavigation, setBlockNavigation] = useState<boolean>(true);
+    const [pendingNavigation, setPendingNavigation] = useState(false);  
     useBlocker((tx) => {
         console.log("Entered useBlocker", tx);
         if (blockNavigation){
@@ -125,17 +130,51 @@ export function Quiz() {
         }
         return false;              
     });
+    useEffect(() => {
+    if (!blockNavigation && pendingNavigation) {
+        if (showSummary) navigate("/leaderboard");
+            else navigate("/");
+        setStartQuiz(false);
+        setShowSummary(false);
+        setPendingNavigation(false);
+    }}, [blockNavigation, pendingNavigation, navigate]);
 
+    const [score, setScore] = useState<number>(0);
+    const username = useLoaderData<string>();
     useEffect(() => {
         if (currentStep > totalSteps) {
             console.log("Quiz completed");
             console.log(`Total time: ${totalTime}, Correct answers: ${correctAnswers}, Total steps: ${totalSteps}, time left: ${timerValue*totalSteps-totalTime}, score: ${calculateScore (correctAnswers, totalSteps, timerValue*totalSteps-totalTime, difficulty)}`);
+            setScore(calculateScore (correctAnswers, totalSteps, timerValue*totalSteps-totalTime, difficulty));
             setShowSummary(true);
         }
     }, [currentStep]);
 
+    async function handleSummaryOk() {
+        setBlockNavigation(false);
+        if (username) {
+            setLoading(true);
+            try {
+                console.log("Updating user score...");
+                await updateUserScore(score);
+                navigate("/leaderboard");
+                setStartQuiz(false);
+                setShowSummary(false);
+            } catch (error) {
+                console.error("Error updating user score:", error);
+                setError("Failed to update your score. Please try again later.");
+                setShowError(true);                
+            } finally {
+                setLoading(false);
+            }
+        } else {
+            setPendingNavigation(true);
+        }
+    }
+
     return (
         <main className={styles.quizContainer}>
+            {loading && <Spinner/>} 
             <div className={styles.progressBarContainer}>
                 <div className={`${styles.progressBar} ` + (streak > 3 ? styles.hard : streak > 2 ? styles.medium : styles.normal)} style={{ width: `${(currentStep / totalSteps) * 100}%` }}/>
             </div>
@@ -171,31 +210,34 @@ export function Quiz() {
                 ? `Are you sure? Only ${totalSteps-currentStep} question to go!`
                 : `Are you sure?`} 
                 onYes = {() => {
-                            blockNavigation = false;
-                            navigate("/");
-                            setShowConfirm(false);
-                            setStartQuiz(false);
+                            setBlockNavigation(false);
+                            setPendingNavigation(true);
                         }
                 }
                 onNo = {() => setShowConfirm(false)}
                 />)}  
 
-            {showSummary && <Summary correctAnswers={correctAnswers} totalSteps={totalSteps} timeLeft={timerValue-totalTime} 
-                    score={calculateScore (correctAnswers, totalSteps, timerValue*totalSteps-totalTime, difficulty)} 
-                    onOk = {() => {
-                                    blockNavigation = false;
-                                    navigate("/leaderboard");
-                                    setStartQuiz(false);
-                                    setShowSummary(false);
-                                }} 
-                            />}
-            {showError && error && <ErrorMsg message={error} onOk={() => {setShowError(false)}} />}
+            {showSummary && (
+                <Summary
+                    correctAnswers={correctAnswers}
+                    totalSteps={totalSteps}
+                    timeLeft={timerValue - totalTime}
+                    score={score}
+                    onOk={handleSummaryOk}
+                />
+            )}
+            {showError && error && <ErrorMsg message={error} onOk={() => {
+                setShowError(false)
+                if (showSummary) {
+                    setPendingNavigation(true);                                       
+                }
+            }} />}
         </main>
     );
 }
 
 function calculateScore(correctAnswers: number, totalSteps: number, timeLeft: number, difficulty: string): number {
-    const difficultyFactor = difficulty === "Easy" ? 1 : difficulty === "Medium" ? 1.5 : 2;
+    const difficultyFactor = difficulty === "1" ? 1 : difficulty === "2" ? 1.5 : 2;
     const timeFactor = timeLeft/10 * difficultyFactor; 
     const score = (correctAnswers / totalSteps) * 100;
     return Math.round((1+timeFactor) * score); 

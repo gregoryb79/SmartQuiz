@@ -31,29 +31,29 @@ function LeaderoardList({ leaderboard }: leaderBoardListProps) {
 
     return (
         <ul className={styles.leadeBoardList}>
-            {leaderboard.map((item,index) => (
+            {leaderboard.map((item) => (
                 <li key={item._id} className={styles.historyItem}>
                     <span>
-                      {index === 0 && (
+                      {item.rank === 1 && (
                         <>
                           <Trophy className={styles.lucideIcon} color="var(--trophy-gold)" /> 1
                         </>
                       )}
-                      {index === 1 && (
+                      {item.rank === 2 && (
                         <>
                             <Trophy className={styles.lucideIcon} color="var(--trophy-silver)" /> 2
                         </>                        
                       )}
-                      {index === 2 && (
+                      {item.rank === 3 && (
                         <>
                             <Trophy className={styles.lucideIcon} color="var(--trophy-bronze)" /> 3
                         </>
                         
                       )}
-                      {[3,4,5,6,7,8,9].includes(index) && index+1}
+                      {item.rank && item.rank > 3 && item.rank}
                     </span>
-                    <span>{item.totalScore}</span>
-                    <span>{item.username}</span>                                      
+                    <span>{item.rank != -1 ? item.totalScore : "--------"}</span>
+                    <span>{item.rank != -1 && item.username}</span>                                      
                 </li>
             ))}
         </ul>
