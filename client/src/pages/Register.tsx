@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import { ErrorMsg } from './components/ErrorMsg';
 
 import { AppIcon } from './components/AppIcon';
+import { PasswordInput } from './components/PasswordInput';
+import { Input } from './components/Input';
 
 
 export function Register() {   
@@ -48,12 +50,14 @@ export function Register() {
         }
     }, [error]);
 
+    const [password, setPassword] = useState("");
+
     return (
         <main className={styles.registerContainer}>
             <h2>Register</h2>            
             {loadingRegister && <Spinner/>} 
             <form className={styles.registerForm} onSubmit={handleRegister}>
-                <section>
+                {/* <section>
                     <label htmlFor="email">e-mail:</label>
                     <input type="e-mail" id="email" name="email" placeholder="Enter your e-mail" aria-label="Enter your email" required />
                 </section>
@@ -68,14 +72,35 @@ export function Register() {
                 <section>
                     <label htmlFor="repeatPassword">Repeat password:</label>
                     <input type="password" id="repeatPassword" name="repeatPassword" placeholder="Repeat password" required />
-                </section>
-                <GeneralButton label="Register"/>                
+                </section> */}
+                <Input type="email" id="email" label="Email" name="email" placeholder="Enter your e-mail" required />
+                <Input type="username" id="username" label="Username" name="username" placeholder="Select username" required />
+                <PasswordInput id="password" label="Password" name="password" placeholder="Enter your password" 
+                required minLength={8} onInput={(e) => setPassword(e.currentTarget.value)} value={password}/>
+                <PasswordInput id="password" label="Repeat password:" name="repeatPassword" placeholder="Repeat password" required />
+                <GeneralButton label="Register"/>     
+                <section>
+                    <p>Password Rules:</p>
+                    <PasswordRules password={password} />  
+                </section>                        
                             
             </form>
 
-           <AppIcon />
+            
             {showError && error && <ErrorMsg message={error} onOk={() => {setShowError(false)}} />}
             
         </main>
+    );
+}
+
+type PasswordRulesProps = { password: string };
+function PasswordRules({ password }: PasswordRulesProps) {
+    return (
+        <ul className={styles.passwordRules}>
+            <li className={password.length >= 8 ? styles.satisfied : undefined}>8 characters long</li>
+            <li className={password.match(/[a-z]/) ? styles.satisfied : undefined}>1 lowercase letter</li>
+            <li className={password.match(/[A-Z]/) ? styles.satisfied : undefined}>1 uppercase letter</li>
+            <li className={password.match(/[0-9]/) ? styles.satisfied : undefined}>1 digit</li>
+        </ul>
     );
 }

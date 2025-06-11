@@ -1,12 +1,13 @@
 import { GeneralButton } from './components/GeneralButton';
 import styles from './LogIn.module.scss';
-import favicon from "../assets/favicon.png";
 import { useLoaderData, useNavigate, useRevalidator } from 'react-router';
 import { useDoLogIn } from '../hooks/useLogIn';
 import { Spinner } from './components/Spinner';
 import { ErrorMsg } from './components/ErrorMsg';
 import { useEffect, useState } from 'react';
 import { AppIcon } from './components/AppIcon';
+import { PasswordInput } from './components/PasswordInput';
+import { Input } from './components/Input';
 
 
 export function LogIn() { 
@@ -48,18 +49,11 @@ export function LogIn() {
         <main className={styles.loginContainer}>
             <h2>Log In</h2>            
             {loadingLogin && <Spinner/>} 
-            <form className={styles.loginForm} onSubmit={handleLogIn}>
-                <section>
-                    <label htmlFor="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your e-mail" required />
-                </section>
-                <section>
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
-                </section>
+            <form className={styles.loginForm} onSubmit={handleLogIn}>                
+                <Input type="email" id="email" label="Email" name="email" placeholder="Enter your e-mail" required />
+                <PasswordInput id="password" label="Password" name="password" placeholder="Enter your password" required />                
                 <GeneralButton label="Log In" />
-                <p>Don't have an account? <a href="/register">Register</a></p>
-                            
+                <p>Don't have an account? <a href="/register">Register</a></p>                            
             </form>
 
             <AppIcon/>

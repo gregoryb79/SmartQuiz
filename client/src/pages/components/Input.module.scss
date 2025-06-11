@@ -1,0 +1,21 @@
+.formField {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+
+    label {
+        font-size: var(--font-lg);
+        background-color: var(--white-bg);
+    }
+
+    input {
+        font-size: var(--font-lg);
+        padding: 0.25rem;
+        border: 1px solid var(--gray-border);
+        border-radius: 0.5rem;
+        width: 14rem;
+    }
+}
