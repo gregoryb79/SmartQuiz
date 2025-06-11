@@ -10,7 +10,7 @@ export function Input({ id, label, ...props }: TextInputProps) {
     return (
         <div className={styles.formField}>
             <label id={labelId} htmlFor={id}>{label}</label>
-            <input id={id} aria-labelledby={labelId} {...props} />
+            <input className={styles.inputField} id={id} aria-labelledby={labelId} {...props} />
         </div>
     );
 }

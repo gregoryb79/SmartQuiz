@@ -30,3 +30,11 @@
     color: var(--white-text);
     border-color: var(--red-error);
 }
+
+@media (max-width: 500px){    
+    .quizButton{
+        width: 100%;
+        justify-content: center;
+        font-size: var(--font-lg);
+    }
+}

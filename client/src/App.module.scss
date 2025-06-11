@@ -40,8 +40,24 @@
         margin-top: auto;
         margin-bottom: auto;
     }
+
 .lucideIcon{
     width: var(--font-xl);
     height: var(--font-xl);
     
 }
+
+@media (max-width: 500px){
+   .nav{
+         flex-direction: column;
+         align-items: center;
+         gap: 1rem;
+         width: 100%;
+   }
+   .navMenu{
+    justify-content: space-around;
+    width: 100%;
+   }
+}
+
+    

@@ -41,6 +41,23 @@
     width: var(--font-xxl);
     height: var(--font-xxl);  
     position: absolute;
-    right: 80%;     
+    right: 100%;
+    transform: translateX(120%);     
     top: calc(50% - var(--font-xxl) / 2);  
+}
+
+@media (max-width: 500px){
+    .leaderBoardContainer{
+       padding: 1rem;        
+       padding-top: 2rem;
+    }
+    .lucideIcon{
+        transform: translateX(70%); 
+    }
+    .rankSpan{
+        max-width: 4rem;
+    }
+    .scoreSpan{
+        max-width: 4rem;
+    }
 }

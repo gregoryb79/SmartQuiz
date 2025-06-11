@@ -56,23 +56,7 @@ export function Register() {
         <main className={styles.registerContainer}>
             <h2>Register</h2>            
             {loadingRegister && <Spinner/>} 
-            <form className={styles.registerForm} onSubmit={handleRegister}>
-                {/* <section>
-                    <label htmlFor="email">e-mail:</label>
-                    <input type="e-mail" id="email" name="email" placeholder="Enter your e-mail" aria-label="Enter your email" required />
-                </section>
-                <section>
-                    <label htmlFor="username">Username:</label>
-                    <input type="username" id="username" name="username" placeholder="Select username" aria-label="Select your username" required />
-                </section>
-                <section>
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
-                </section>
-                <section>
-                    <label htmlFor="repeatPassword">Repeat password:</label>
-                    <input type="password" id="repeatPassword" name="repeatPassword" placeholder="Repeat password" required />
-                </section> */}
+            <form className={styles.registerForm} onSubmit={handleRegister}>                
                 <Input type="email" id="email" label="Email" name="email" placeholder="Enter your e-mail" required />
                 <Input type="username" id="username" label="Username" name="username" placeholder="Select username" required />
                 <PasswordInput id="password" label="Password" name="password" placeholder="Enter your password" 

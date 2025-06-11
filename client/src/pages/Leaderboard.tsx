@@ -33,7 +33,7 @@ function LeaderoardList({ leaderboard }: leaderBoardListProps) {
         <ul className={styles.leadeBoardList}>
             {leaderboard.map((item) => (
                 <li key={item._id} className={styles.historyItem}>
-                    <span>
+                    <span className={styles.rankSpan}>
                       {item.rank === 1 && (
                         <>
                           <Trophy className={styles.lucideIcon} color="var(--trophy-gold)" /> 1
@@ -52,7 +52,7 @@ function LeaderoardList({ leaderboard }: leaderBoardListProps) {
                       )}
                       {item.rank && item.rank > 3 && item.rank}
                     </span>
-                    <span>{item.rank != -1 ? item.totalScore : "--------"}</span>
+                    <span className={styles.scoreSpan}>{item.rank != -1 ? item.totalScore : "--------"}</span>
                     <span>{item.rank != -1 && item.username}</span>                                      
                 </li>
             ))}

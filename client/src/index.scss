@@ -36,6 +36,11 @@
         --dark-text:   #F9FAFB;   // Headings, main text
         --light-text:  #9CA3AF;   // Labels, secondary info     
     }
+
+    @media (max-width: 500px) {
+        --standard-width: 100%; 
+        --standard-height: 90%; 
+    }
 }
 
 

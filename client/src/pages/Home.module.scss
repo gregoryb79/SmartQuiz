@@ -50,3 +50,15 @@
         gap: 0.5rem;
     }   
 }
+
+@media (max-width: 500px){
+    .homeMain{
+        padding: 0;
+        padding-top: 1rem;
+    }
+    .mainButtons{
+        flex-direction: column;
+        gap: 1rem;
+        width: 90%;
+    }
+}

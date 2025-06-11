@@ -104,3 +104,15 @@
     text-align: center;
     font-size: var(--font-lg);
 }
+
+@media (max-width: 500px){
+  .quizHeader{
+    flex-direction: column;
+    align-items: center;
+  }
+  .quizOptions{
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+  }
+}

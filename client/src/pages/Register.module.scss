@@ -35,15 +35,6 @@
         gap: 0.5rem;
     } 
 
-    input{
-        font-size: var(--font-lg);
-        // padding: 0.25rem;
-        border: 1px solid var(--gray-border);
-        border-radius: 0.5rem;
-        width: 14rem;
-        height: 2rem;
-    }
-
     section{
         display: flex;
         flex-direction: column;
@@ -62,5 +53,20 @@
 
     li.satisfied {
         color: var(--green-success);
+    }
+}
+
+@media (max-width: 500px){
+    .registerContainer{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;        
+    }
+    .registerForm{
+        width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;        
+        p{
+            text-align: center;
+        }
     }
 }
