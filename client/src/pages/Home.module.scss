@@ -1,7 +1,6 @@
 @use '../styles/mixins' as *;
 
-.homeMain{
-    // margin: -2px auto 0 auto;
+.homeMain{    
 
     @include pageFrame;
 
@@ -10,21 +9,14 @@
     align-items: center;
     gap: 1rem;
     padding: 2rem;
-    // background-color: var(--light-gray-bg);
-
-    // width: var(--standard-width);
-    // height: var(--standard-height);
     
-    // border: 2px solid var(--gray-border);
-    // border-radius: 0 0 8px 8px;
 }
 
 .mainButtons{
     display: flex;
     flex-direction: row;
     width: 90%;
-    justify-content: space-between;
-    // gap: 1rem;
+    justify-content: space-between;    
 }
 
 .quizForm{
@@ -47,6 +39,8 @@
         padding: 0.25rem;
         border: 1px solid var(--gray-border);
         border-radius: 0.5rem;
+        background-color: var(--input-bg);
+        color: var(--dark-text);
     }
 
     section{

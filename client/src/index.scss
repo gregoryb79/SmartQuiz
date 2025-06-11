@@ -12,7 +12,7 @@
     --trophy-bronze: #CD7F32; // Bronze
     --disabled-gray:    #D1D5DB;   // Disabled buttons and inputs
 
-    --white:            #FFFFFF;   // Base color for cards and inputs
+    --white-bg:            #FFFFFF;   // Base color for cards and inputs
     --input-bg:         #F3F4F6;   // Input fields background
 
     --font-xxl: 2rem;      // ~32px — Main headings (e.g., “Quiz Completed!”)
@@ -30,6 +30,7 @@
         --light-gray-bg: #1F2937;   // Primary background (replaces light-gray)
         --input-bg:      #111827;   // Cards, input backgrounds
         --gray-border:   #374151;   // Outlines, dividers
+        --white-bg:      #1F2937;   // Base color for cards and inputs
 
         // Text
         --dark-text:   #F9FAFB;   // Headings, main text
